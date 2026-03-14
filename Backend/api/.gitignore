@@ -1,0 +1,41 @@
+# Compiled output
+/dist
+/build
+/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variables de entorno (¡NUNCA subir al repo!)
+.env
+.env.*
+!.env.example
+
+# Tests
+/coverage
+/.nyc_output
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+
+# Misc
+.temp
+.tmp
+*.pid
+*.seed
+*.pid.lock
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

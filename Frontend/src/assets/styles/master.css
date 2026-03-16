@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════
+   MASTER MODULE — Estilos globales
+   Importado en MasterLayout.vue (sin scoped)
+═══════════════════════════════════════════════ */
+/* ── Snackbar por encima del contenedor fixed ── */
+.v-snackbar__wrapper {
+    z-index: 99999 !important;
+}
+
+/* ── LOGIN: Contenedor full-screen ── */
+.master-login-container {
+  display: flex;
+  align-items: stretch; /* ← hijos se estiran al alto completo */
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url('/images/gym_bg_v3.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+/* ── LOGIN: Zona izquierda con card ── */
+.login-left {
+  display: flex;
+  align-items: center; /* ← centra la card verticalmente */
+  justify-content: center;
+  width: 540px;
+  min-width: 700px;
+  min-height: 100vh; /* ← en lugar de height: 100% */
+  padding: 2rem clamp(2rem, 4vw, 3.5rem);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* ── LOGIN: Zona derecha decorativa ── */
+.login-right {
+  flex: 1;
+}
+
+/* ── LOGIN: Card ── */
+.master-login-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 2rem 3rem 2.5rem;   /* más padding horizontal → inputs más cortos */
+    border-top: 4px solid #dc2626 !important;
+    border-radius: 20px !important;
+    animation: masterSlideUp 0.4s ease-out;
+}
+
+@keyframes masterSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── LOGIN: Badge ── */
+.master-badge {
+    margin: 0.25rem 0 1.5rem 0.25rem;  /* pequeño margen top+left para no pegarse al borde */
+    font-weight: 600;
+    min-height: 36px;
+}
+
+/* ── LOGIN: Header ── */
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem; /* espacio fijo, más aire */
+}
+
+.login-header h1 {
+  font-family: var(--font-title) !important;
+  font-size: 2rem;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.login-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ── LOGIN: Form ── */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5rem;   /* ← separa los inputs de los bordes de la card */
+}
+
+/* ── LOGIN: Wrapper centrado del botón ── */
+.login-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.login-button {
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  min-height: 50px;
+  min-width: 220px; /* ← ancho controlado, no full */
+  padding: 0 2.5rem;
+  border-radius: 12px !important;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.35) !important;
+}
+
+/* ── LOGIN: Error shake ── */
+.error-message {
+  animation: masterShake 0.35s ease-in-out;
+}
+
+@keyframes masterShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* ── RESPONSIVO: Tablet ── */
+@media (max-width: 960px) {
+  .login-left {
+    width: 460px;
+    min-width: 360px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ── RESPONSIVO: Móvil ── */
+@media (max-width: 640px) {
+  .master-login-container {
+    align-items: flex-start;
+  }
+
+  .login-left {
+    width: 100%;
+    min-width: unset;
+    min-height: 100svh;
+    padding: 2rem 1.25rem;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+  }
+
+  .login-right {
+    display: none;
+  }
+
+  .master-login-card {
+    max-width: 100%;
+    border-radius: 16px !important;
+  }
+}
+
+/* ── RESPONSIVO: Pantallas bajas (laptops 14") ── */
+@media (max-height: 650px) {
+  .login-left {
+    align-items: flex-start; /* solo se activa en pantallas MUY bajas */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .master-login-card {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .login-header {
+    margin-bottom: 1rem;
+  }
+
+  .master-badge {
+    margin-bottom: 0.75rem;
+  }
+}

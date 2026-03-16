@@ -1,65 +1,70 @@
 @import './base.css';
 @import "tailwindcss";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+:root {
+  --font-title: 'Montserrat', sans-serif;
+  --font-body:  'Roboto', sans-serif;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+* {
+  font-family: var(--font-body) !important;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+/* ── Restaurar MDI Icons — todos los posibles selectores ── */
+.v-icon,
+.v-icon::before,
+.v-icon::after,
+.mdi,
+.mdi::before,
+[class*="mdi-"],
+[class*="mdi-"]::before,
+.v-list-item__prepend .v-icon,
+.v-list-item__prepend .v-icon::before {
+  font-family: 'Material Design Icons' !important;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+/* ── Restaurar PrimeIcons (legacy) ── */
+.pi,
+.pi::before,
+[class*="pi-"],
+[class*="pi-"]::before {
+  font-family: 'primeicons' !important;
 }
 
+/* ── Montserrat en títulos ── */
+h1, h2, h3, h4, h5, h6,
+.v-toolbar-title,
+.v-toolbar-title__placeholder,
+.v-card-title,
+.text-h1, .text-h2, .text-h3,
+.text-h4, .text-h5, .text-h6,
+.font-montserrat {
+  font-family: var(--font-title) !important;
+}
+
+/* ── Clases utilitarias ── */
+.font-title { font-family: var(--font-title) !important; }
+.font-body  { font-family: var(--font-body)  !important; }
+
+/* ── PrimeVue Dropdown (legacy) ── */
 .p-dropdown-panel {
-    background: #1e293b !important;
-    border: 1px solid #475569 !important;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.7) !important;
-    background: #1e293b !important;
-    z-index: 99999 !important;
+  background: #1e293b !important;
+  border: 1px solid #475569 !important;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.7) !important;
+  z-index: 99999 !important;
 }
+.p-dropdown-items-wrapper,
+.p-dropdown-items { background: #1e293b !important; }
+.p-dropdown-item  { color: #e2e8f0 !important; background: transparent !important; }
+.p-dropdown-item:hover { background: #334155 !important; }
+.p-dropdown-item.p-highlight { background: #0d9488 !important; }
 
-.p-dropdown-items-wrapper {
-    background: #1e293b !important;
-}
-
-.p-dropdown-items {
-    background: #1e293b !important;
-}
-
-.p-dropdown-item {
-    color: #e2e8f0 !important;
-    background: transparent !important;
-}
-
-.p-dropdown-item:hover {
-    background: #334155 !important;
-}
-
-.p-dropdown-item.p-highlight {
-    background: #0d9488 !important;
+/* ── Tooltips del sidebar Master ── */
+.v-tooltip > .v-overlay__content {
+    background: #000000 !important;
+    color: #f97316 !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    border-radius: 6px !important;
+    padding: 4px 10px !important;
 }

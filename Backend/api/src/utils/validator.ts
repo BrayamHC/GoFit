@@ -132,10 +132,10 @@ export const CrearMembresiaSchema = z.object({
 //     email: z.email('El email no es válido'),
 // });
 
-// export const LoginGlobalSchema = z.object({
-//     email: z.email('El email no es válido'),
-//     password: z.string().min(6, 'La contraseña es requerida'),
-// });
+export const LoginGlobalSchema = z.object({
+    email: z.email('El email no es válido'),
+    password: z.string().min(6, 'La contraseña es requerida'),
+});
 
 // //USUARIOS_GLOBALES
 // export const CrearUsuarioGlobalSchema = z.object({

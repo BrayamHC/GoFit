@@ -16,13 +16,14 @@ const masterRoutes = [
     children: [
       {
         path: '',
-        redirect: '/master/dashboard'
+        redirect: '/core/dashboard'
       },
       {
         path: 'dashboard',
         name: 'MasterDashboard',
         component: () => import('@/views/master/MasterDashboardView.vue'),
         meta: {
+          requiresMasterAuth: true,
           title: 'Dashboard - Panel Maestro'
         }
       },
@@ -31,6 +32,7 @@ const masterRoutes = [
         name: 'MasterDespachos',
         component: () => import('@/views/master/DespachosView.vue'),
         meta: {
+          requiresMasterAuth: true,
           title: 'Despachos - Panel Maestro'
         }
       },
@@ -39,15 +41,17 @@ const masterRoutes = [
         name: 'MasterCrearDespachos',
         component: () => import('@/views/master/CrearDespacho.vue'),
         meta: {
+          requiresMasterAuth: true,
           title: 'Crear Despacho - Panel Maestro'
         }
       },
       {
-        path: 'planes',
-        name: 'MasterCrearPlanes',
-        component: () => import('@/views/master/CrearPlanes.vue'),
+        path: 'membresias',
+        name: 'MasterCrearMembresias',
+        component: () => import('@/views/master/CrearMembresias.vue'),
         meta: {
-          title: 'Crear Planes - Panel Maestro'
+          requiresMasterAuth: true,
+          title: 'Crear Membresías - Panel Maestro'
         }
       },
       {
@@ -55,6 +59,7 @@ const masterRoutes = [
         name: 'MasterCrearUsuarios',
         component: () => import('@/views/master/CrearUsuariosView.vue'),
         meta: {
+          requiresMasterAuth: true,
           title: 'Crear Usuarios - Panel Maestro'
         }
       },
@@ -63,6 +68,7 @@ const masterRoutes = [
         name: 'MasterVerSuscripciones',
         component: () => import('@/views/master/Suscripciones.vue'),
         meta: {
+          requiresMasterAuth: true,
           title: 'Ver Suscripciones - Panel Maestro'
         }
       }

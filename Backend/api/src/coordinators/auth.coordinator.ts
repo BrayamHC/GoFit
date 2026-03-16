@@ -52,8 +52,7 @@ export class AuthCoordinator {
                         email:      usuario.email,
                     },
                 },
-            };
-        } catch (error) {
+            }; } catch (error) {
             if (error instanceof InvalidCredentialsException) {
                 throw error;
             }

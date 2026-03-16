@@ -8,34 +8,53 @@ import 'vuetify/styles'
 export default createVuetify({
   components,
   directives,
+
   icons: {
     defaultSet: 'mdi',
     aliases,
-    sets: {
-      mdi,
-    },
+    sets: { mdi },
   },
+
   theme: {
-    defaultTheme: 'dark', 
+    defaultTheme: 'light',
     themes: {
-      dark: {
-        dark: true,
+
+      light: {
+        dark: false,
         colors: {
-          primary: '#3B82F6',      // Azul
-          secondary: '#475569',    // Gris azulado
-          error: '#EF4444',        // Rojo (tu color principal)
-          success: '#10B981',      // Verde
-          warning: '#F59E0B',      // Amarillo
-          info: '#3B82F6',         // Azul info
-          background: '#1E293B',   // Fondo oscuro (como tu app)
-          surface: '#334155',      // Cards y superficies
+          background: '#FFFFFF',
+          surface:    '#FFFFFF',
+          primary:    '#1976D2',
+          secondary:  '#424242',
+          error:      '#EF4444',
+          info:       '#2196F3',
+          success:    '#4CAF50',
+          warning:    '#FB8C00',
         },
       },
+
+      masterDark: {
+        dark: true,
+        colors: {
+          background:        '#0f172a',
+          surface:           '#1e293b',
+          'surface-bright':  '#1e293b',
+          'surface-variant': '#334155',
+          primary:           '#dc2626',
+          secondary:         '#1e3a5f',
+          error:             '#dc2626',
+          info:              '#3B82F6',
+          success:           '#10B981',
+          warning:           '#F59E0B',
+        },
+      },
+
     },
   },
+
   defaults: {
     VBtn: {
-      style: 'text-transform: none;', // Botones sin MAYÚSCULAS automáticas
+      style: 'text-transform: none; letter-spacing: 0.3px;',
     },
   },
 })

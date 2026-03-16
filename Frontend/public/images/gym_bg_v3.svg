@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">
+  <defs>
+    <!-- Fondo base oscuro puro -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#0f0f0f"/>
+    </linearGradient>
+
+    <!-- Glow rojo intenso derecho -->
+    <radialGradient id="glowRight" cx="78%" cy="50%" r="55%">
+      <stop offset="0%"   style="stop-color:#ff2020;stop-opacity:0.28"/>
+      <stop offset="60%"  style="stop-color:#ff2020;stop-opacity:0.10"/>
+      <stop offset="100%" style="stop-color:#ff2020;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Glow difuso general (toda la pantalla) -->
+    <radialGradient id="glowCenter" cx="55%" cy="50%" r="65%">
+      <stop offset="0%"   style="stop-color:#ff2020;stop-opacity:0.10"/>
+      <stop offset="100%" style="stop-color:#ff2020;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Glow izquierdo sutil -->
+    <radialGradient id="glowLeft" cx="12%" cy="50%" r="35%">
+      <stop offset="0%"   style="stop-color:#ff2020;stop-opacity:0.09"/>
+      <stop offset="100%" style="stop-color:#ff2020;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Línea horizontal degradada intensa -->
+    <linearGradient id="hLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   style="stop-color:#ff2020;stop-opacity:0"/>
+      <stop offset="35%"  style="stop-color:#ff2020;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#ff2020;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="hLineSub" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   style="stop-color:#ff2020;stop-opacity:0"/>
+      <stop offset="50%"  style="stop-color:#ff2020;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#ff2020;stop-opacity:0.5"/>
+    </linearGradient>
+
+    <!-- Separador vertical -->
+    <linearGradient id="vSep" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   style="stop-color:#ff2020;stop-opacity:0"/>
+      <stop offset="30%"  style="stop-color:#ff2020;stop-opacity:0.45"/>
+      <stop offset="70%"  style="stop-color:#ff2020;stop-opacity:0.45"/>
+      <stop offset="100%" style="stop-color:#ff2020;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── BASE ── -->
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <rect width="1440" height="900" fill="url(#glowCenter)"/>
+  <rect width="1440" height="900" fill="url(#glowRight)"/>
+  <rect width="1440" height="900" fill="url(#glowLeft)"/>
+
+  <!-- ── BORDE SUPERIOR ── -->
+  <rect x="0" y="0" width="1440" height="3.5" fill="#ff2020" opacity="1"/>
+
+  <!-- ── SEPARADOR VERTICAL ── -->
+  <line x1="520" y1="0" x2="520" y2="900" stroke="url(#vSep)" stroke-width="1"/>
+
+  <!-- ── LÍNEAS HORIZONTALES DECORATIVAS ── -->
+  <line x1="0"   y1="86"  x2="1440" y2="86"  stroke="url(#hLine)"    stroke-width="1.5"/>
+  <line x1="0"   y1="90"  x2="1440" y2="90"  stroke="url(#hLineSub)" stroke-width="0.6"/>
+  <line x1="530" y1="814" x2="1440" y2="814" stroke="url(#hLine)"    stroke-width="1"   opacity="0.7"/>
+
+  <!-- ── GRID PERSPECTIVA INFERIOR DERECHA ── -->
+  <g stroke="#ff2020" stroke-width="0.7" opacity="0.10">
+    <line x1="520" y1="600" x2="1440" y2="600"/>
+    <line x1="520" y1="645" x2="1440" y2="645"/>
+    <line x1="520" y1="690" x2="1440" y2="690"/>
+    <line x1="520" y1="735" x2="1440" y2="735"/>
+    <line x1="520" y1="780" x2="1440" y2="780"/>
+    <line x1="520" y1="825" x2="1440" y2="825"/>
+    <line x1="520" y1="870" x2="1440" y2="870"/>
+  </g>
+  <g stroke="#ff2020" stroke-width="0.7" opacity="0.08">
+    <line x1="980" y1="490" x2="520"  y2="900"/>
+    <line x1="980" y1="490" x2="650"  y2="900"/>
+    <line x1="980" y1="490" x2="780"  y2="900"/>
+    <line x1="980" y1="490" x2="910"  y2="900"/>
+    <line x1="980" y1="490" x2="1040" y2="900"/>
+    <line x1="980" y1="490" x2="1170" y2="900"/>
+    <line x1="980" y1="490" x2="1300" y2="900"/>
+    <line x1="980" y1="490" x2="1440" y2="860"/>
+  </g>
+
+  <!-- ── HEXÁGONOS ── -->
+  <polygon points="1180,155 1252,196 1252,278 1180,319 1108,278 1108,196"
+           fill="none" stroke="#ff2020" stroke-width="1.5" opacity="0.18"/>
+  <polygon points="1180,172 1240,207 1240,277 1180,312 1120,277 1120,207"
+           fill="#ff2020" fill-opacity="0.05"/>
+
+  <polygon points="1340,88 1386,114 1386,168 1340,194 1294,168 1294,114"
+           fill="none" stroke="#ff2020" stroke-width="1.2" opacity="0.16"/>
+
+  <polygon points="1420,260 1440,271 1440,293 1420,304 1400,293 1400,271"
+           fill="none" stroke="#ff2020" stroke-width="0.9" opacity="0.14"/>
+
+  <polygon points="1310,680 1356,706 1356,760 1310,786 1264,760 1264,706"
+           fill="none" stroke="#ff2020" stroke-width="1.1" opacity="0.14"/>
+  <polygon points="1310,698 1344,718 1344,758 1310,778 1276,758 1276,718"
+           fill="#ff2020" fill-opacity="0.04"/>
+
+  <polygon points="790,630 816,645 816,675 790,690 764,675 764,645"
+           fill="none" stroke="#ff2020" stroke-width="0.8" opacity="0.12"/>
+
+  <!-- ── MANCUERNA ── -->
+  <g opacity="0.10" fill="#ff2020">
+    <rect x="855"  y="418" width="250" height="14" rx="7"/>
+    <rect x="832"  y="398" width="30"  height="54" rx="6"/>
+    <rect x="866"  y="404" width="20"  height="42" rx="4"/>
+    <rect x="1074" y="404" width="20"  height="42" rx="4"/>
+    <rect x="1098" y="398" width="30"  height="54" rx="6"/>
+  </g>
+
+  <!-- ── BARRA OLÍMPICA DIAGONAL ── -->
+  <g opacity="0.08" fill="#ff2020" transform="rotate(-11, 1100, 290)">
+    <rect x="895"  y="283" width="390" height="10" rx="5"/>
+    <rect x="876"  y="261" width="24"  height="54" rx="5"/>
+    <rect x="904"  y="268" width="15"  height="40" rx="3"/>
+    <rect x="1270" y="268" width="15"  height="40" rx="3"/>
+    <rect x="1289" y="261" width="24"  height="54" rx="5"/>
+  </g>
+
+  <!-- ── KETTLEBELL ── -->
+  <g opacity="0.09" fill="none" stroke="#ff2020">
+    <circle cx="1385" cy="490" r="52" stroke-width="13"/>
+    <path d="M 1352 444 Q 1385 403 1418 444" stroke-width="15" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── WATERMARK GO FIT — centrado en zona derecha ── -->
+  <!-- zona derecha: x de 520 a 1440 → centro en ~980 -->
+  <!-- centro vertical: y ~450 → go ~350, fit ~530 -->
+  <text x="980" y="390"
+        font-family="Arial Black, Impact, sans-serif"
+        font-size="210" font-weight="900"
+        text-anchor="middle"
+        fill="#ff2020" opacity="0.09"
+        letter-spacing="-4">
+    GO
+  </text>
+  <text x="980" y="580"
+        font-family="Arial Black, Impact, sans-serif"
+        font-size="210" font-weight="900"
+        text-anchor="middle"
+        fill="#ff2020" opacity="0.09"
+        letter-spacing="-4">
+    FIT
+  </text>
+
+  <!-- ── PUNTOS DECORATIVOS ── -->
+  <g fill="#ff2020" opacity="0.08">
+    <circle cx="600" cy="140" r="2.2"/><circle cx="600" cy="210" r="2.2"/>
+    <circle cx="600" cy="280" r="2.2"/><circle cx="600" cy="350" r="2.2"/>
+    <circle cx="600" cy="420" r="2.2"/><circle cx="600" cy="490" r="2.2"/>
+    <circle cx="670" cy="175" r="2.2"/><circle cx="670" cy="245" r="2.2"/>
+    <circle cx="670" cy="315" r="2.2"/><circle cx="670" cy="385" r="2.2"/>
+    <circle cx="670" cy="455" r="2.2"/>
+    <circle cx="1390" cy="140" r="2"/><circle cx="1390" cy="210" r="2"/>
+    <circle cx="1390" cy="280" r="2"/><circle cx="1390" cy="350" r="2"/>
+    <circle cx="1390" cy="580" r="2"/><circle cx="1390" cy="650" r="2"/>
+  </g>
+
+  <!-- ── PULSE RINGS ── -->
+  <circle cx="1180" cy="237" r="88"  fill="none" stroke="#ff2020" stroke-width="1"   opacity="0.10"/>
+  <circle cx="1180" cy="237" r="115" fill="none" stroke="#ff2020" stroke-width="0.7" opacity="0.07"/>
+  <circle cx="1180" cy="237" r="145" fill="none" stroke="#ff2020" stroke-width="0.4" opacity="0.04"/>
+
+  <!-- ── ACCENT CORNERS ── -->
+  <polygon points="1440,0 1440,140 1290,0" fill="#ff2020" opacity="0.14"/>
+  <polygon points="1440,0 1440,65  1375,0" fill="#ff2020" opacity="0.10"/>
+  <polygon points="1440,900 1440,790 1330,900" fill="#ff2020" opacity="0.10"/>
+
+  <!-- ── LÍNEAS DIAGONALES ENERGÍA ── -->
+  <line x1="1440" y1="170" x2="1080" y2="560" stroke="#ff2020" stroke-width="0.8" opacity="0.09"/>
+  <line x1="1440" y1="310" x2="1040" y2="700" stroke="#ff2020" stroke-width="0.6" opacity="0.06"/>
+  <line x1="530"  y1="0"   x2="920"  y2="430" stroke="#ff2020" stroke-width="0.6" opacity="0.06"/>
+
+  <!-- ── BORDE INFERIOR ── -->
+  <rect x="0" y="897" width="1440" height="3" fill="#ff2020" opacity="0.5"/>
+</svg>

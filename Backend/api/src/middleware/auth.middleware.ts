@@ -42,6 +42,7 @@ export class AuthMiddleware implements NestMiddleware {
             (req as any).user    = sesion.usuario;
             (req as any).token   = token;
             (req as any).sesion  = sesion;
+            (req as any).tipoSesion = sesion.tipo_sesion;
 
             // 5. Renovar TTL
             await this.authService.renovarExpiracionSesionEnRedis(

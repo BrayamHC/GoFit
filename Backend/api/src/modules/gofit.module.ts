@@ -2,8 +2,9 @@ import { Module } from '@nestjs/common';
 import { KnexModule } from '../database/knex.module';
 
 // Controllers
-import { ClientesController }   from '../controllers/clientes.controller';
-import { MembresiasController } from '../controllers/membresias.controller';
+import { ClientesController }       from '../controllers/clientes.controller';
+import { MembresiasController }     from '../controllers/membresias.controller';
+import { SuscripcionesController }  from '../controllers/suscripciones.controller';
 
 // Coordinators
 import { ClientesCoordinator }   from '../coordinators/clientes.coordinator';
@@ -16,8 +17,9 @@ import { SuscripcionesService } from '../services/suscripciones.service';
 import { BitacoraService }      from '../services/bitacora.service';
 
 // RepoData
-import { ClientesRepoData }   from '../repo/RepoData/clientes.repoData';
-import { MembresiasRepoData } from '../repo/RepoData/membresias.repoData';
+import { ClientesRepoData }      from '../repo/RepoData/clientes.repoData';
+import { MembresiasRepoData }    from '../repo/RepoData/membresias.repoData';
+import { SuscripcionesRepoData } from '../repo/RepoData/suscripciones.repoData';
 
 // RepoAction
 import { ClientesRepoAction }      from '../repo/actions/clientes.repoAction';
@@ -36,6 +38,7 @@ import { BitacoraBO }      from '../repo/BO/bitacora.bo';
     controllers: [
         ClientesController,
         MembresiasController,
+        SuscripcionesController,   // ← agregado
     ],
     providers: [
         // Coordinators
@@ -49,6 +52,7 @@ import { BitacoraBO }      from '../repo/BO/bitacora.bo';
         // RepoData
         ClientesRepoData,
         MembresiasRepoData,
+        SuscripcionesRepoData,     // ← agregado
         // RepoAction
         ClientesRepoAction,
         MembresiasRepoAction,

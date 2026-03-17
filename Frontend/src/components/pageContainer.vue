@@ -1,11 +1,7 @@
 <template>
-    <v-container fluid class="pa-4 pa-sm-5 pa-md-6 page-container">
+    <v-container fluid class="pa-4 pa-sm-5 pa-md-6">
         <slot />
     </v-container>
 </template>
 
-<style scoped>
-.page-container {
-    min-height: 100%;
-}
-</style>
+<!-- Sin <style> — el scroll lo controla v-main desde afuera -->

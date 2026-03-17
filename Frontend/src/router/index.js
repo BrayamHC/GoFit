@@ -83,80 +83,35 @@ router.beforeEach(async (to, from, next) => {
   const authStore = useAuthStore()
   const masterAuthStore = useMasterAuthStore()
 
-  // Actualizar título de la página
   document.title = to.meta.title ? `${to.meta.title} | Go Fit` : 'Go Fit'
 
-  // ========== RUTAS DEL PANEL MAESTRO ==========
+  // ── Master routes ──
   if (to.matched.some((record) => record.meta.requiresMasterAuth)) {
     if (!masterAuthStore.isAuthenticated) {
-      return next({
-        name: 'MasterLogin',
-        query: { redirect: to.fullPath },
-      })
+      return next({ name: 'MasterLogin', query: { redirect: to.fullPath } })
     }
-
-    // Verificar permisos del panel maestro
-    if (to.meta.permissions) {
-      const hasPermission = to.meta.permissions.some((permission) =>
-        masterAuthStore.hasPermission(permission),
-      )
-      if (!hasPermission) {
-        return next({ name: 'AccessDenied' })
-      }
-    }
-
     return next()
   }
 
-  // ========== SI ESTÁ EN LOGIN MAESTRO Y YA ESTÁ AUTENTICADO ==========
   if (to.name === 'MasterLogin' && masterAuthStore.isAuthenticated) {
     return next('/core/dashboard')
   }
 
-  // ========== RUTAS NORMALES (USUARIOS REGULARES) ==========
-  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth !== false)
+  // ── Rutas normales (nunca aplica a rutas master) ──
+  const requiresAuth =
+    to.matched.some((record) => record.meta.requiresAuth !== false) &&
+    !to.matched.some((record) => record.meta.requiresMasterAuth)  // ← línea clave
 
-  if (requiresAuth) {
-    if (!authStore.isAuthenticated) {
-      return next({
-        name: 'Login',
-        query: { redirect: to.fullPath },
-      })
-    }
-
-    /*  // Verificar permisos
-         if (to.meta.permissions) {
-             const hasPermission = authStore.hasAnyPermission(to.meta.permissions)
-             if (!hasPermission) {
-                 return next({ name: 'AccessDenied' })
-             }
-         }
-  */
-    /*  // Verificar rol mínimo
-         if (to.meta.minRole) {
-             const hasRole = authStore.hasMinRole(to.meta.minRole)
-             if (!hasRole) {
-                 return next({ name: 'AccessDenied' })
-             }
-         } */
-
-    // Verificar módulo de sucursal
-    if (to.meta.requiresModule) {
-      const hasModule = authStore.branchHasModule(to.meta.requiresModule)
-      if (!hasModule) {
-        return next({
-          name: 'Dashboard',
-          query: { error: 'module_not_available' },
-        })
-      }
-    }
+  if (requiresAuth && !authStore.isAuthenticated) {
+    return next({ name: 'Login', query: { redirect: to.fullPath } })
   }
 
-  // Si está en login normal y ya está autenticado
   if (to.name === 'Login' && authStore.isAuthenticated) {
     return next('/dashboard')
   }
+
   next()
 })
+
 
 export default router

@@ -6,8 +6,8 @@ const masterRoutes = [
     meta: {
       requiresAuth: false,
       requiresMasterAuth: false,
-      title: 'Login - Panel Maestro'
-    }
+      title: 'Login - Panel Maestro',
+    },
   },
   {
     path: '/core',
@@ -16,7 +16,7 @@ const masterRoutes = [
     children: [
       {
         path: '',
-        redirect: '/core/dashboard'
+        redirect: '/core/dashboard',
       },
       {
         path: 'dashboard',
@@ -24,8 +24,8 @@ const masterRoutes = [
         component: () => import('@/views/master/MasterDashboardView.vue'),
         meta: {
           requiresMasterAuth: true,
-          title: 'Dashboard - Panel Maestro'
-        }
+          title: 'Dashboard - Panel Maestro',
+        },
       },
       {
         path: 'despachos',
@@ -33,8 +33,8 @@ const masterRoutes = [
         component: () => import('@/views/master/DespachosView.vue'),
         meta: {
           requiresMasterAuth: true,
-          title: 'Despachos - Panel Maestro'
-        }
+          title: 'Despachos - Panel Maestro',
+        },
       },
       {
         path: 'crear-despachos',
@@ -42,8 +42,8 @@ const masterRoutes = [
         component: () => import('@/views/master/CrearDespacho.vue'),
         meta: {
           requiresMasterAuth: true,
-          title: 'Crear Despacho - Panel Maestro'
-        }
+          title: 'Crear Despacho - Panel Maestro',
+        },
       },
       {
         path: 'membresias',
@@ -51,8 +51,8 @@ const masterRoutes = [
         component: () => import('@/views/master/CrearMembresias.vue'),
         meta: {
           requiresMasterAuth: true,
-          title: 'Crear Membresías - Panel Maestro'
-        }
+          title: 'Crear Membresías - Panel Maestro',
+        },
       },
       {
         path: 'usuarios',
@@ -60,8 +60,8 @@ const masterRoutes = [
         component: () => import('@/views/master/CrearUsuariosView.vue'),
         meta: {
           requiresMasterAuth: true,
-          title: 'Crear Usuarios - Panel Maestro'
-        }
+          title: 'Crear Usuarios - Panel Maestro',
+        },
       },
       {
         path: 'suscripciones',
@@ -69,11 +69,17 @@ const masterRoutes = [
         component: () => import('@/views/master/Suscripciones.vue'),
         meta: {
           requiresMasterAuth: true,
-          title: 'Ver Suscripciones - Panel Maestro'
-        }
-      }
-    ]
-  }
+          title: 'Ver Suscripciones - Panel Maestro',
+        },
+      },
+      {
+        path: '/core/clientes',
+        name: 'Clientes',
+        component: () => import('@/views/master/ClientesGestor.vue'),
+        meta: { requiresAuth: true },
+      },
+    ],
+  },
 ]
 
 export default masterRoutes

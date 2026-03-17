@@ -4,7 +4,7 @@
 ═══════════════════════════════════════════════ */
 /* ── Snackbar por encima del contenedor fixed ── */
 .v-snackbar__wrapper {
-    z-index: 99999 !important;
+  z-index: 99999 !important;
 }
 
 /* ── LOGIN: Contenedor full-screen ── */
@@ -44,12 +44,12 @@
 
 /* ── LOGIN: Card ── */
 .master-login-card {
-    width: 100%;
-    max-width: 440px;
-    padding: 2rem 3rem 2.5rem;   /* más padding horizontal → inputs más cortos */
-    border-top: 4px solid #dc2626 !important;
-    border-radius: 20px !important;
-    animation: masterSlideUp 0.4s ease-out;
+  width: 100%;
+  max-width: 440px;
+  padding: 2rem 3rem 2.5rem; /* más padding horizontal → inputs más cortos */
+  border-top: 4px solid #dc2626 !important;
+  border-radius: 20px !important;
+  animation: masterSlideUp 0.4s ease-out;
 }
 
 @keyframes masterSlideUp {
@@ -65,9 +65,9 @@
 
 /* ── LOGIN: Badge ── */
 .master-badge {
-    margin: 0.25rem 0 1.5rem 0.25rem;  /* pequeño margen top+left para no pegarse al borde */
-    font-weight: 600;
-    min-height: 36px;
+  margin: 0.25rem 0 1.5rem 0.25rem; /* pequeño margen top+left para no pegarse al borde */
+  font-weight: 600;
+  min-height: 36px;
 }
 
 /* ── LOGIN: Header ── */
@@ -93,9 +93,9 @@
 
 /* ── LOGIN: Form ── */
 .login-form {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0.5rem;   /* ← separa los inputs de los bordes de la card */
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.9rem; /* ← separa los inputs de los bordes de la card */
 }
 
 /* ── LOGIN: Wrapper centrado del botón ── */
@@ -178,20 +178,67 @@
 /* ── RESPONSIVO: Pantallas bajas (laptops 14") ── */
 @media (max-height: 650px) {
   .login-left {
-    align-items: flex-start; /* solo se activa en pantallas MUY bajas */
+    align-items: flex-start;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
-
   .master-login-card {
     padding: 1.5rem 1.75rem;
   }
-
   .login-header {
     margin-bottom: 1rem;
   }
-
   .master-badge {
     margin-bottom: 0.75rem;
   }
 }
+/* ↑ CIERRA el media query aquí — todo lo que sigue va FUERA */
+/* ── LAYOUT: Scroll solo en contenido principal ── */
+.main-scroll {
+    height: 100dvh;
+    overflow-y: auto !important;
+}
+
+
+
+/* ── CLIENTES: Cards ── */
+.cliente-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cliente-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.25) !important;
+}
+
+.red-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626, #ef4444);
+}
+
+.avatar-shadow {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+/* ── DIALOG: Header con gradiente ── */
+.dialog-header {
+  position: relative;
+  overflow: hidden;
+}
+.dialog-header-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #f87171 100%);
+}
+

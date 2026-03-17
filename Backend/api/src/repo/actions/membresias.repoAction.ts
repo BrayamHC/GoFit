@@ -8,16 +8,24 @@ export class MembresiasRepoAction {
     ) {}
 
     async insertarMembresia(datos: any) {
-        const [membresia] = await this.knex('membresias')
-            .insert(datos)
-            .returning([
-                'membresia_id',
-                'membresia_uuid',
-                'nombre',
-                'precio',
-                'dias_duracion',
-                'status',
-            ]);
-        return membresia;
+        try {
+            const [membresia_id] = await this.knex('membresias')
+                .insert(datos)
+                .returning('membresia_id');  // ← PostgreSQL necesita returning()
+
+            const row = await this.knex('membresias')
+                .where('membresia_id', membresia_id)
+                .first();
+
+            return {
+                ...row,
+                caracteristicas: typeof row.caracteristicas === 'string'
+                    ? JSON.parse(row.caracteristicas)
+                    : (row.caracteristicas ?? []),
+            };
+        } catch (error) {
+            console.error('Error insertando membresia:', error);
+            throw error;
+        }
     }
 }

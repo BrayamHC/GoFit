@@ -35,13 +35,16 @@ export const CrearClienteSchema = z.object({
 
 // ── Membresías ────────────────────────────────────
 export const CrearMembresiaSchema = z.object({
-    nombre:       z.string().min(1).max(100),
-    descripcion:  z.string().optional(),
-    precio:       z.number().positive(),
-    moneda:       z.string().max(10).default('MXN'),
-    dias_duracion: z.number().int().positive(),
-    dias_gracia:  z.number().int().min(0).default(0),
+    nombre:          z.string().min(1).max(100),
+    descripcion:     z.string().optional(),
+    caracteristicas: z.array(z.string().max(100)).max(8).default([]),
+    precio:          z.number().positive(),
+    moneda:          z.string().max(10).default('MXN'),
+    tipo:            z.enum(['mensual', 'trimestral', 'semestral', 'anual', 'personalizado']).default('mensual'),
+    dias_duracion:   z.number().int().positive(),
+    dias_gracia:     z.number().int().min(0).default(0),
 });
+
 
 
 

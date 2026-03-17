@@ -36,80 +36,78 @@
 
     <!-- Navigation Drawer -->
     <v-navigation-drawer
-    v-model="drawer"
-    :rail="rail"
-    :permanent="!mobile"
-    color="grey-darken-4"
-    theme="dark"
->
-    <!-- Toggle Desktop -->
-    <template #prepend>
+      v-model="drawer"
+      :rail="rail"
+      :permanent="!mobile"
+      color="grey-darken-4"
+      theme="dark"
+    >
+      <!-- Toggle Desktop -->
+      <template #prepend>
         <div class="d-flex justify-end pa-2" v-if="!mobile">
-            <v-btn
-                variant="text"
-                :icon="rail ? 'mdi-chevron-right' : 'mdi-chevron-left'"
-                @click.stop="rail = !rail"
-                size="small"
-            />
+          <v-btn
+            variant="text"
+            :icon="rail ? 'mdi-chevron-right' : 'mdi-chevron-left'"
+            @click.stop="rail = !rail"
+            size="small"
+          />
         </div>
         <v-divider v-if="!mobile" />
-    </template>
+      </template>
 
-    <!-- MENU ITEMS — zona central -->
-    <v-list density="compact" nav>
+      <!-- MENU ITEMS — zona central -->
+      <v-list density="compact" nav>
         <v-tooltip
-            v-for="item in menuItems"
-            :key="item.to"
-            :text="item.title"
-            location="end"
-            :disabled="!rail"
+          v-for="item in menuItems"
+          :key="item.to"
+          :text="item.title"
+          location="end"
+          :disabled="!rail"
         >
-            <template #activator="{ props }">
-                <v-list-item
-                    :to="item.to"
-                    :prepend-icon="item.icon"
-                    :title="!rail ? item.title : ''"
-                    :value="item.value"
-                    color="red"
-                    rounded="xl"
-                    class="my-1"
-                    v-bind="props"
-                />
-            </template>
+          <template #activator="{ props }">
+            <v-list-item
+              :to="item.to"
+              :prepend-icon="item.icon"
+              :title="!rail ? item.title : ''"
+              :value="item.value"
+              color="red"
+              rounded="xl"
+              class="my-1"
+              v-bind="props"
+            />
+          </template>
         </v-tooltip>
-    </v-list>
+      </v-list>
 
-    <!-- ✅ CONFIG + LOGOUT — siempre al fondo -->
-    <template #append>
+      <!-- ✅ CONFIG + LOGOUT — siempre al fondo -->
+      <template #append>
         <div class="pa-2">
-            <v-divider class="mb-2" />
+          <v-divider class="mb-2" />
 
-            <v-tooltip text="Configuración" location="end" :disabled="!rail">
-                <template #activator="{ props }">
-                    <v-list-item class="my-1" rounded="xl" v-bind="props">
-                        <template #prepend>
-                            <v-icon color="white">mdi-cog</v-icon>
-                        </template>
-                        <v-list-item-title v-if="!rail">Configuración</v-list-item-title>
-                    </v-list-item>
+          <v-tooltip text="Configuración" location="end" :disabled="!rail">
+            <template #activator="{ props }">
+              <v-list-item class="my-1" rounded="xl" v-bind="props">
+                <template #prepend>
+                  <v-icon color="white">mdi-cog</v-icon>
                 </template>
-            </v-tooltip>
+                <v-list-item-title v-if="!rail">Configuración</v-list-item-title>
+              </v-list-item>
+            </template>
+          </v-tooltip>
 
-            <v-tooltip text="Cerrar sesión" location="end" :disabled="!rail">
-                <template #activator="{ props }">
-                    <v-list-item class="my-1" rounded="xl" @click="handleLogout" v-bind="props">
-                        <template #prepend>
-                            <v-icon color="orange">mdi-logout</v-icon>
-                        </template>
-                        <v-list-item-title v-if="!rail">Cerrar sesión</v-list-item-title>
-                    </v-list-item>
+          <v-tooltip text="Cerrar sesión" location="end" :disabled="!rail">
+            <template #activator="{ props }">
+              <v-list-item class="my-1" rounded="xl" @click="handleLogout" v-bind="props">
+                <template #prepend>
+                  <v-icon color="orange">mdi-logout</v-icon>
                 </template>
-            </v-tooltip>
+                <v-list-item-title v-if="!rail">Cerrar sesión</v-list-item-title>
+              </v-list-item>
+            </template>
+          </v-tooltip>
         </div>
-    </template>
-
-</v-navigation-drawer>
-
+      </template>
+    </v-navigation-drawer>
 
     <!-- Main -->
     <v-main class="bg-grey-darken-3 main-scroll">
@@ -139,19 +137,20 @@ const userInitial = computed(() => userName.value.charAt(0).toUpperCase())
 const menuItems = ref([
   { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/core/dashboard', value: 'dashboard' },
   { title: 'Inventario', icon: 'mdi-package-variant', to: '/core/despachos', value: 'inventario' },
-  { title: 'Clientes', icon: 'mdi-account-plus', to: '/core/usuarios', value: 'clientes' },
+  { title: 'Clientes', icon: 'mdi-account-group', to: '/core/clientes', value: 'clientes' },
   {
     title: 'Membresías',
-    icon: 'mdi-clipboard-outline',
+    icon: 'mdi-cash-clock',
     to: '/core/membresias',
     value: 'membresias',
   },
   {
     title: 'Suscripciones',
-    icon: 'mdi-account-check',
+    icon: 'mdi-card-account-details-outline',
     to: '/core/suscripciones',
     value: 'suscripciones',
   },
+
   { title: 'Usuarios', icon: 'mdi-account-plus', to: '/core/usuarios', value: 'usuarios' },
 ])
 

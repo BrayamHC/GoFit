@@ -175,6 +175,7 @@ export class AuthService implements OnModuleInit, OnModuleDestroy {
 
             const datosSesion = {
                 token,
+                tipo_sesion: 'global',
                 usuario: datosUsuario,
                 fecha_creacion: new Date().toISOString(),
             };

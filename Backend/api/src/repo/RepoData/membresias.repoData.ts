@@ -9,31 +9,41 @@ export class MembresiasRepoData {
     ) {}
 
     async obtenerMembresias(filtros?: any) {
-        try {
-            const query = this.knex('membresias as m')
-                .select(
-                    'm.membresia_id',
-                    'm.membresia_uuid',
-                    'm.nombre',
-                    'm.descripcion',
-                    'm.precio',
-                    'm.moneda',
-                    'm.dias_duracion',
-                    'm.dias_gracia',
-                    'm.status',
-                    'm.fecha_creacion',
-                    'm.fecha_actualizacion',
-                );
+    try {
+        const query = this.knex('membresias as m')
+            .select(
+                'm.membresia_id',
+                'm.membresia_uuid',
+                'm.nombre',
+                'm.descripcion',
+                'm.caracteristicas',   // ← agregar
+                'm.precio',
+                'm.moneda',
+                'm.tipo',              // ← agregar
+                'm.dias_duracion',
+                'm.status',
+                'm.fecha_creacion',
+                'm.fecha_actualizacion',
+            );
 
-            MembresiasRepoHelper.aplicarFiltros(query, filtros);
-            MembresiasRepoHelper.aplicarOrden(query, filtros);
+        MembresiasRepoHelper.aplicarFiltros(query, filtros);
+        MembresiasRepoHelper.aplicarOrden(query, filtros);
 
-            return await query;
-        } catch (error) {
-            console.error('Error obteniendo membresias:', error);
-            throw error;
-        }
+        const rows = await query;
+
+        // Parsear JSON de caracteristicas
+        return rows.map(r => ({
+    ...r,
+    caracteristicas: typeof r.caracteristicas === 'string'
+        ? JSON.parse(r.caracteristicas)
+        : (r.caracteristicas ?? []),
+}));
+    } catch (error) {
+        console.error('Error obteniendo membresias:', error);
+        throw error;
     }
+}
+
 
     async obtenerMembresiaPorId(membresiaId: number) {
         try {

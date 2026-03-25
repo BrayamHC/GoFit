@@ -5,6 +5,7 @@ import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { WinstonModule } from 'nest-winston';
 import { winstonConfig } from './common/config/logger.config';
 import { Request, Response, NextFunction } from 'express';
+import { ZodValidationPipe } from 'nestjs-zod';
 
 
 async function bootstrap() {
@@ -35,7 +36,7 @@ async function bootstrap() {
 
   // Registrar ExceptionFilter global
   app.useGlobalFilters(new HttpExceptionFilter());
-
+  app.useGlobalPipes(new ZodValidationPipe());
   await app.listen(port, host);
 
   console.log(`API corriendo en http://${host}:${port}`);

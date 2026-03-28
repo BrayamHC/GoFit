@@ -243,40 +243,53 @@ if (form) {
     overlay.id = 'pageTransitionOverlay';
 
     overlay.style.cssText = `
-        position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
         background: #1a0a0a; z-index: 99999;
         opacity: 1; pointer-events: none;
         transition: opacity 0.35s ease-in-out;
+        will-change: opacity;
     `;
     document.body.appendChild(overlay);
 
-    window.addEventListener('pageshow', () => {
-        requestAnimationFrame(() => { overlay.style.opacity = '0'; });
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => overlay.style.opacity = '0', 50);
-    });
-
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function (e) {
-            const targetUrl = this.getAttribute('href');
-
-            if (!targetUrl || targetUrl.startsWith('#') || targetUrl.startsWith('http') ||
-                targetUrl.startsWith('mailto') || targetUrl.startsWith('tel') ||
-                this.getAttribute('target') === '_blank') {
-                return;
-            }
-
-            // CORRECCIÓN CORS: Si el usuario ya está en la página actual, ignora el click
-            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-            const targetPath = targetUrl.split('/').pop() || 'index.html';
-            if (currentPath === targetPath) return;
-
-            e.preventDefault();
-            overlay.style.opacity = '1';
-
-            setTimeout(() => { window.location.href = targetUrl; }, 350);
+    // Double rAF: garantiza que el navegador pinta opacity:1 ANTES de hacer fade-out
+    function revealPage() {
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                overlay.style.opacity = '0';
+            });
         });
+    }
+
+    // Solo pageshow — cubre carga normal + bfcache (atrás/adelante del navegador)
+    window.addEventListener('pageshow', revealPage);
+
+    // Event delegation: funciona con links añadidos dinámicamente
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        const targetUrl = link.getAttribute('href');
+
+        if (!targetUrl ||
+            targetUrl.startsWith('#') ||
+            targetUrl.startsWith('http') ||
+            targetUrl.startsWith('mailto') ||
+            targetUrl.startsWith('tel') ||
+            link.getAttribute('target') === '_blank') {
+            return;
+        }
+
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const targetPath = targetUrl.split('/').pop() || 'index.html';
+        if (currentPath === targetPath) return;
+
+        e.preventDefault();
+
+        // Bloquea clicks durante la transición de salida
+        overlay.style.pointerEvents = 'all';
+        overlay.style.opacity = '1';
+
+        // +20ms de buffer sobre la duración del transition (350ms)
+        setTimeout(() => { window.location.href = targetUrl; }, 370);
     });
 })();

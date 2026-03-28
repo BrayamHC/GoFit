@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;500;600&display=swap');
+  *{box-sizing:border-box}
+  body{margin:0;padding:0;background:#0a0a0a;font-family:'Roboto','Segoe UI',Helvetica,Arial,sans-serif}
+  .wrapper{width:100%;background:#0a0a0a;padding:40px 16px}
+  .card{max-width:580px;width:100%;margin:0 auto;background:#111;border-radius:16px;
+        overflow:hidden;border:1px solid #1e1e1e}
+
+  /* HEADER */
+  .header{background:linear-gradient(150deg,#1c0505 0%,#2e0c0c 50%,#1a0505 100%);
+          padding:28px 40px;border-bottom:3px solid #e63c2f;
+          display:flex;align-items:center;gap:14px}
+  .header img{height:32px;width:auto}
+  .header-label{font-family:'Montserrat',sans-serif;font-weight:800;
+                font-size:11px;color:#e63c2f;letter-spacing:2px;text-transform:uppercase}
+
+  /* ALERT BANNER */
+  .alert{background:rgba(230,60,47,.08);border-bottom:1px solid rgba(230,60,47,.15);
+         padding:18px 40px;display:flex;align-items:center;gap:12px}
+  .alert-dot{width:8px;height:8px;background:#e63c2f;border-radius:50%;flex-shrink:0}
+  .alert-text{font-size:13px;color:#aaa;line-height:1.5}
+  .alert-text strong{color:#fff;font-weight:600}
+
+  /* FIELDS */
+  .fields{padding:32px 40px}
+  .field-row{display:flex;gap:16px;margin-bottom:16px}
+  .field{flex:1;background:#181818;border:1px solid #242424;
+         border-radius:10px;padding:14px 16px}
+  .field-lbl{font-size:10px;font-weight:600;color:#444;
+             letter-spacing:1.5px;text-transform:uppercase;
+             display:block;margin-bottom:6px}
+  .field-val{font-size:14px;color:#e0e0e0;font-weight:500;
+             display:block;word-break:break-word}
+  .field-val.accent{color:#e63c2f;font-family:'Montserrat',sans-serif;font-weight:700}
+
+  /* MENSAJE */
+  .msg-wrap{padding:0 40px 32px}
+  .msg-box{background:#181818;border:1px solid #242424;border-radius:10px;padding:18px 20px}
+  .msg-lbl{font-size:10px;font-weight:600;color:#444;letter-spacing:1.5px;
+           text-transform:uppercase;display:block;margin-bottom:10px}
+  .msg-text{font-size:14px;color:#888;line-height:1.75;white-space:pre-wrap}
+
+  /* ACTIONS */
+  .actions{padding:0 40px 32px;display:flex;gap:12px}
+  .action-btn{display:inline-block;text-decoration:none;
+              padding:12px 24px;border-radius:8px;
+              font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px}
+  .btn-reply{background:#e63c2f;color:#fff}
+  .btn-wa{background:#1a3a23;color:#1a9e4a;border:1px solid #1a4a2a}
+
+  /* FOOTER */
+  .footer{background:#0a0a0a;border-top:1px solid #1a1a1a;
+          padding:20px 40px;text-align:center}
+  .footer p{font-size:11px;color:#2a2a2a;margin:0;line-height:1.6}
+
+  @media(max-width:480px){
+    .wrapper{padding:16px 8px}
+    .header,.alert,.fields,.msg-wrap,.actions,.footer{padding-left:20px;padding-right:20px}
+    .field-row{flex-direction:column;gap:10px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+<div class="card">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="https://i.ibb.co/CpK6p8f4/Component-3.png" alt="Go Fit" />
+    <span class="header-label">Nueva solicitud de demo</span>
+  </div>
+
+  <!-- ALERT BANNER -->
+  <div class="alert">
+    <div class="alert-dot"></div>
+    <div class="alert-text">
+      <strong>{{nombre}}</strong> de <strong>{{gimnasio}}</strong>
+      acaba de solicitar información. Responde en menos de 24 h.
+    </div>
+  </div>
+
+  <!-- CAMPOS -->
+  <div class="fields">
+    <div class="field-row">
+      <div class="field">
+        <span class="field-lbl">Nombre</span>
+        <span class="field-val">{{nombre}}</span>
+      </div>
+      <div class="field">
+        <span class="field-lbl">Gimnasio</span>
+        <span class="field-val">{{gimnasio}}</span>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <span class="field-lbl">Teléfono</span>
+        <span class="field-val">{{telefono}}</span>
+      </div>
+      <div class="field">
+        <span class="field-lbl">Correo</span>
+        <span class="field-val">{{correo}}</span>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field" style="flex:none;width:100%">
+        <span class="field-lbl">Módulo de interés</span>
+        <span class="field-val accent">{{modulo}}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENSAJE -->
+  <div class="msg-wrap">
+    <div class="msg-box">
+      <span class="msg-lbl">Mensaje del cliente</span>
+      <span class="msg-text">{{mensaje}}</span>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>© 2026 Go Fit — Panel interno · No reenviar</p>
+  </div>
+
+</div>
+</div>
+</body>
+</html>

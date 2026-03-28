@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="x-apple-disable-message-reformatting" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;500;600&display=swap');
+  *{box-sizing:border-box}
+  body{margin:0;padding:0;background:#0d0d0d;font-family:'Roboto','Segoe UI',Helvetica,Arial,sans-serif}
+  .preview-text{display:none;max-height:0;overflow:hidden;visibility:hidden;opacity:0;color:transparent;height:0;width:0}
+  .wrapper{width:100%;background:#0d0d0d;padding:48px 16px}
+  .card{max-width:600px;width:100%;margin:0 auto;background:#161616;border-radius:20px;overflow:hidden;border:1px solid #242424}
+  .header-sub{font-family:'Roboto',sans-serif;font-size:11px;color:#555;letter-spacing:2px;text-transform:uppercase;margin:0}
+  .hero{padding:48px 48px 32px;text-align:center}
+.badge{
+  width:76px;height:76px;
+  background:rgba(230,60,47,.08);
+  border:2px solid rgba(230,60,47,.35);
+  border-radius:50%;
+  display:inline-table; /* inline-table en vez de inline-flex para email */
+  margin-bottom:24px;
+  text-align:center;
+  vertical-align:middle;
+}
+.badge-inner{
+  display:table-cell;
+  vertical-align:middle;
+  font-size:32px;
+  line-height:1;
+  color:#e63c2f;
+}  .hero h1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:#fff;margin:0 0 14px;line-height:1.3}
+  .hero p{font-size:15px;color:#888;line-height:1.8;margin:0 auto;max-width:440px}
+  .hero p strong{color:#fff}
+  .hero p em{font-style:normal;color:#e63c2f;font-weight:600}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,#2a2a2a 30%,#2a2a2a 70%,transparent);margin:0 48px}
+  .sec-label{padding:28px 48px 12px}
+  .sec-label span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:10px;color:#e63c2f;letter-spacing:2.5px;text-transform:uppercase}
+  .summary-wrap{padding:0 48px 28px}
+  .summary{width:100%;border-radius:12px;overflow:hidden;border:1px solid #222;border-collapse:separate;border-spacing:0}
+  .summary td{padding:15px 18px;vertical-align:top;width:50%}
+  .summary tr:first-child td{border-bottom:1px solid #222}
+  .summary tr td:first-child{background:#1e1e1e;border-right:1px solid #222}
+  .summary tr td:last-child{background:#1b1b1b}
+  .cell-lbl{font-size:10px;font-weight:500;color:#444;letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:5px}
+  .cell-val{font-size:14px;font-weight:500;color:#e0e0e0;display:block}
+  .cell-accent{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#e63c2f;display:block}
+  .steps-wrap{padding:0 48px 32px}
+  .steps-box{background:rgba(230,60,47,.05);border:1px solid rgba(230,60,47,.13);border-radius:14px;padding:26px 28px}
+  .steps-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:#fff;margin:0 0 18px}
+  .step{display:flex;align-items:flex-start;gap:13px;margin-bottom:13px}
+  .step:last-child{margin-bottom:0}
+  .step-n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;color:#e63c2f;min-width:20px;padding-top:1px}
+  .step-t{font-size:13px;color:#777;line-height:1.65}
+  .step-t strong{color:#bbb;font-weight:500}
+  .cta-wrap{padding:0 48px 44px;text-align:center}
+  .cta-link{
+    display:inline-flex;align-items:center;gap:9px;
+    color:#1a9e4a;text-decoration:none;
+    font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;
+    border-bottom:1px solid rgba(26,158,74,0.3);
+    padding-bottom:2px;
+  }
+  .footer{background:#0f0f0f;border-top:1px solid #1e1e1e;padding:26px 48px;text-align:center}
+  .footer p{font-size:11px;color:#2e2e2e;margin:0 0 6px;line-height:1.6}
+  .footer a{font-size:12px;text-decoration:none;color:#3a3a3a}
+  .footer a.accent{color:#6b1a1a}
+  .sep{color:#2a2a2a;margin:0 8px}
+  @media(max-width:480px){
+    .wrapper{padding:20px 8px}
+    .hero,.steps-wrap,.summary-wrap,.cta-wrap,.footer{padding-left:24px;padding-right:24px}
+    .divider,.sec-label{margin-left:24px;margin-right:24px}
+    .summary td{display:block;width:100%}
+    .summary tr:first-child td{border-bottom:none}
+    .summary tr td:first-child{border-right:none;border-bottom:1px solid #222}
+    .hero h1{font-size:22px}
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-text">✓ Tu solicitud de demo en Go Fit fue recibida. Te contactamos en menos de 24 h.</div>
+
+<div class="wrapper">
+<div class="card">
+
+ <!-- ══ HEADER ══ -->
+<div style="padding:36px 48px 28px; text-align:center;
+     background:linear-gradient(150deg,#1c0505 0%,#2e0c0c 50%,#1a0505 100%);
+     border-bottom:3px solid #e63c2f;">
+
+  <img src="https://i.ibb.co/CpK6p8f4/Component-3.png"
+       height="38" alt="Go Fit"
+       style="display:block; margin:0 auto 10px; height:38px; width:auto;" />
+
+  <p class="header-sub">Software de gestión para gimnasios</p>
+</div>
+
+  <!-- ══ HERO ══ -->
+ <!-- HERO -->
+<div class="hero">
+  <div class="badge">
+    <span class="badge-inner">✓</span>
+  </div>
+  <h1>¡Solicitud recibida!</h1>
+  <p>
+    Hola <strong>{{nombre}}</strong>, gracias por tu interés en <em>Go Fit</em>.<br/>
+    Recibimos tu solicitud. Un asesor te contactará en menos de <em>24 horas</em>.
+  </p>
+</div>
+
+  <div class="divider"></div>
+
+  <!-- ══ RESUMEN ══ -->
+  <div class="sec-label"><span>Resumen de tu solicitud</span></div>
+  <div class="summary-wrap">
+    <table class="summary">
+      <tr>
+        <td><span class="cell-lbl">Nombre</span><span class="cell-val">{{nombre}}</span></td>
+        <td><span class="cell-lbl">Gimnasio</span><span class="cell-val">{{gimnasio}}</span></td>
+      </tr>
+      <tr>
+        <td><span class="cell-lbl">Teléfono</span><span class="cell-val">{{telefono}}</span></td>
+        <td><span class="cell-lbl">Módulo de interés</span><span class="cell-accent">{{modulo}}</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ══ PASOS ══ -->
+  <div class="steps-wrap">
+    <div class="steps-box">
+      <p class="steps-title">¿Qué sigue?</p>
+      <div class="step">
+        <span class="step-n">01</span>
+        <span class="step-t">Un asesor de Go Fit revisará tu solicitud y preparará tu demo personalizada</span>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <span class="step-t">Te contactaremos al <strong>{{telefono}}</strong> para confirmar disponibilidad</span>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <span class="step-t">Agendaremos tu <strong>demo gratuita</strong> sin compromisos, a tu conveniencia</span>
+      </div>
+    </div>
+  </div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <p style="font-size:12px;color:#444;margin:0 0 12px;letter-spacing:0.5px;
+            text-transform:uppercase;font-family:'Montserrat',sans-serif;">
+    ¿Tienes dudas?
+  </p>
+  <a href="{{wa_url}}" class="cta-link">
+    <span style="font-size:18px;line-height:1;vertical-align:middle;">💬</span>
+    Escríbenos por WhatsApp
+  </a>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<div class="footer">
+  <p>© 2026 Go Fit — Todos los derechos reservados</p>
+  <p>
+    <img src="https://i.ibb.co/tpg8dT48/Component-1.png"
+         width="12" height="12" alt=""
+         style="width:12px;height:12px;border-radius:3px;opacity:0.5;
+                vertical-align:middle;position:relative;top:-1px;margin-right:6px;" />
+    <a href="mailto:soporte_GoFit@outlook.com" class="accent">soporte_GoFit@outlook.com</a>
+    <span class="sep">·</span>
+    <a href="https://wa.me/522229160133">+52 2229 160 133</a>
+  </p>
+</div>
+
+</div>
+</div>
+</body>
+</html>

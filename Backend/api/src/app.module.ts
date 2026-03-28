@@ -1,16 +1,20 @@
-// src/app.module.ts
 import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 import { ConfigModule } from '@nestjs/config';
-import { GoFitModule } from './modules/gofit.module';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { KnexModule } from './database/knex.module';
-import { AuthModule } from './modules/auth.module';
+import { AuthModule } from './modules/auth/auth.module';
 import { AuthMiddleware } from './middleware/auth.middleware';
 import { ExtractorSubdominioMiddleware } from './middleware/extractor-subdominio.middleware';
 import { throttlerConfig } from './config/throttler.config';
+
+import { ClientesModule } from './modules/clientes/clientes.module';
+import { MembresiasModule } from './modules/membresias/membresias.module';
+import { SuscripcionesModule } from './modules/suscripciones/suscripciones.module';
+import { UsuariosModule } from './modules/usuarios/usuarios.module';
 
 @Module({
   imports: [
@@ -21,7 +25,11 @@ import { throttlerConfig } from './config/throttler.config';
     KnexModule,
     AuthModule,
     ThrottlerModule.forRoot(throttlerConfig),
-    GoFitModule
+    // módulos gofit
+    ClientesModule,
+    MembresiasModule,
+    SuscripcionesModule,
+    UsuariosModule,
   ],
   controllers: [AppController],
   providers: [

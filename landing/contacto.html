@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/Component 1.png" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="assets/Component 3.png" alt="Go Fit" /></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="contacto.html"  class="active">Contacto</a></li>
+      <!-- Solo visible en móvil -->
+      <li class="nav-mobile-cta-wrap">
+        <a href="contacto.html" class="nav-cta nav-mobile-cta nav-animated-btn">
+          <img src="assets/FAVICON 2.svg" alt="" class="nav-btn-icon" />
+          <span>Solicitar Demo</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Solo visible en desktop -->
+    <a href="contacto.html" class="nav-cta nav-desktop-cta nav-animated-btn">
+      <img src="assets/FAVICON 2.svg" alt="" class="nav-btn-icon" />
+      <span>Solicitar Demo</span>
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="page-hero" style="position:relative; overflow:hidden;">
+    <canvas id="gymCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+    <div style="position:relative; z-index:1;">
+      <h1>Contáctanos</h1>
+      <p>Estamos listos para ayudarte...</p>
+    </div>
+  </div>
+
+
+  <section style="padding: 80px 0;">
+    <div class="section" style="padding-top:0; padding-bottom:0;">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <span class="section-tag">Hablemos</span>
+          <h2>¿Cómo podemos ayudarte?</h2>
+          <p>Ya sea que quieras una demostración, tienes dudas sobre los módulos o quieres una cotización personalizada, estamos disponibles para atenderte.</p>
+
+          <div class="contact-detail">
+            <div class="ci-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <div style="font-size:0.8rem; color:#999; margin-bottom:2px;">WhatsApp</div>
+              <a href="https://wa.me/522291601133" target="_blank">+52 229 160 1133</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div style="font-size:0.8rem; color:#999; margin-bottom:2px;">Correo Electrónico</div>
+              <a href="mailto:supportGoFit@outlook.com">supportGoFit@outlook.com</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="ci-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <div style="font-size:0.8rem; color:#999; margin-bottom:2px;">Horario de atención</div>
+              <span>Lunes a Viernes, 9:00 — 18:00</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="ci-icon"><i class="fa-solid fa-rocket"></i></div>
+            <div>
+              <div style="font-size:0.8rem; color:#999; margin-bottom:2px;">Demo gratis</div>
+              <span>Respondemos en menos de 24 horas</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/522291601133?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Go%20Fit"
+             target="_blank"
+             class="btn-primary"
+             style="margin-top:28px; display:inline-flex; background:#25d366; gap:10px;">
+            <i class="fa-brands fa-whatsapp" style="font-size:1.1rem;"></i>
+            Enviar WhatsApp
+          </a>
+        </div>
+
+        <div class="contact-form">
+          <h3><i class="fa-solid fa-clipboard-list" style="color:var(--rojo);margin-right:8px;"></i>Solicitar más información</h3>
+          <div class="form-success" id="formSuccess">
+            <i class="fa-solid fa-circle-check"></i> ¡Mensaje enviado con éxito! Te contactaremos pronto.
+          </div>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Juan García" required />
+              </div>
+              <div class="form-group">
+                <label for="gimnasio">Nombre del gimnasio *</label>
+                <input type="text" id="gimnasio" name="gimnasio" placeholder="Elite Fitness" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono">Teléfono (10 dígitos) *</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="2291234567" maxlength="10" required />
+              </div>
+              <div class="form-group">
+                <label for="correo">Correo electrónico *</label>
+                <input type="email" id="correo" name="correo" placeholder="juan@mgimnasio.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="modulo">¿Qué módulo te interesa más?</label>
+              <select id="modulo" name="modulo">
+                <option value="">Selecciona un módulo</option>
+                <option>Administración de Personal</option>
+                <option>Gestión de Clientes</option>
+                <option>Membresías y Suscripciones</option>
+                <option>Maquinaria</option>
+                <option>Suplementos Deportivos</option>
+                <option>Portal de Asistencias</option>
+                <option>Todos los módulos</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje o preguntas adicionales</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu gimnasio o en qué podemos ayudarte..."></textarea>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="privacidad" name="privacidad" required />
+              <label for="privacidad">
+                Estoy de acuerdo con el <a href="#" style="color:var(--rojo);">Aviso de Privacidad</a> y los <a href="#" style="color:var(--rojo);">Términos del Servicio</a>.
+              </label>
+            </div>
+            <button type="submit" class="btn-submit">
+              <span id="btnText"><i class="fa-solid fa-paper-plane"></i> Enviar solicitud</span>
+              <span id="btnLoading" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i> Enviando...</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <!-- Columna 1: Logo Principal y texto -->
+      <div class="footer-brand">
+        <img src="assets/GoFitNaranja.png" alt="Go Fit" />
+        <p>Software de gestión integral para gimnasios. Centraliza tus operaciones y enfócate en el crecimiento.</p>
+      </div>
+
+      <!-- Columna 2: Producto -->
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="funcionalidades.html">Funcionalidades</a></li>
+          <li><a href="contacto.html">Solicitar Demo</a></li>
+          <li><a href="contacto.html">Precios</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Módulos -->
+      <div>
+        <h4>Módulos</h4>
+        <ul>
+          <li><a href="funcionalidades.html">Personal</a></li>
+          <li><a href="funcionalidades.html">Clientes</a></li>
+          <li><a href="funcionalidades.html">Membresías</a></li>
+          <li><a href="funcionalidades.html">Maquinaria</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Icono, Contacto y Legal agrupados -->
+      <div>
+        <!-- Aquí está el ícono en blanco -->
+        <div style="margin-bottom: 24px;">
+          <img src="assets/Component 1.png" alt="Icono Go Fit" style="width: 50px; height: auto; filter: brightness(0) invert(1); opacity: 0.85;" />
+        </div>
+
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/522291601133"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+          <li><a href="mailto:supportGoFit@outlook.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+        </ul>
+
+        <h4 style="margin-top: 24px;">Legal</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y Condiciones</a></li>
+          <li><a href="#">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Parte inferior -->
+    <div class="footer-bottom">
+      <span>© 2026 Go Fit — Todos los derechos reservados</span>
+      <span><a href="#">Aviso de Privacidad</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

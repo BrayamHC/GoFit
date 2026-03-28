@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Go Fit</title>
+  <meta name="description" content="GoFit es el sistema integral para gestionar tu gimnasio: membresías, clientes, personal, maquinaria y más." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/Component 1.png" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="assets/Component 3.png" alt="Go Fit" /></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <!-- Solo visible en móvil -->
+      <li class="nav-mobile-cta-wrap">
+        <a href="contacto.html" class="nav-cta nav-mobile-cta nav-animated-btn">
+          <img src="assets/FAVICON 2.svg" alt="" class="nav-btn-icon" />
+          <span>Solicitar Demo</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Solo visible en desktop -->
+    <a href="contacto.html" class="nav-cta nav-desktop-cta nav-animated-btn">
+      <img src="assets/FAVICON 2.svg" alt="" class="nav-btn-icon" />
+      <span>Solicitar Demo</span>
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="gymCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-left">
+        <!-- <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Software para Gimnasios</span> -->
+        <h1>Gestiona tu gimnasio con <span>Go Fit</span></h1>
+        <p>La plataforma todo-en-uno para administrar tu gimnasio: clientes, membresías, personal, maquinaria y suplementos, desde un solo lugar.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num">100%</div><div class="lbl">En la nube</div></div>
+          <div class="hero-stat"><div class="num">8+</div><div class="lbl">Módulos</div></div>
+          <div class="hero-stat"><div class="num">24/7</div><div class="lbl">Disponible</div></div>
+        </div>
+
+        <div class="hero-btns">
+          <a href="contacto.html" class="btn-primary animated-btn">
+            <img src="assets/FAVICON 2.svg" alt="Go Fit Logo" class="btn-logo-icon" />
+            <span>Solicitar Demo</span>
+          </a>
+          <a href="funcionalidades.html" class="btn-secondary">Ver funcionalidades <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+
+
+      </div>
+      <div class="hero-right">
+        <div class="devices-showcase">
+
+          <!-- LAPTOP -->
+          <div class="device-laptop">
+            <div class="laptop-screen">
+              <div class="laptop-inner">
+                <!-- Mini dashboard dentro -->
+                <div class="mini-dash-header">
+                  <span class="mini-dot r"></span>
+                  <span class="mini-dot y"></span>
+                  <span class="mini-dot g"></span>
+                  <span class="mini-dash-title">Go Fit — Dashboard</span>
+                </div>
+                <div class="mini-stats">
+                  <div class="mini-stat"><i class="fa-solid fa-users"></i><div><b>248</b><span>Socios</span></div></div>
+                  <div class="mini-stat"><i class="fa-solid fa-calendar-check"></i><div><b>63</b><span>Hoy</span></div></div>
+                  <div class="mini-stat"><i class="fa-solid fa-arrow-trend-up"></i><div><b>94%</b><span>Renov.</span></div></div>
+                </div>
+                <div class="mini-bars">
+                  <div class="mini-bar-wrap"><div class="mini-bar" style="--h:55%"></div><span>L</span></div>
+                  <div class="mini-bar-wrap"><div class="mini-bar" style="--h:80%"></div><span>M</span></div>
+                  <div class="mini-bar-wrap"><div class="mini-bar" style="--h:65%"></div><span>X</span></div>
+                  <div class="mini-bar-wrap"><div class="mini-bar hi" style="--h:90%"></div><span>J</span></div>
+                  <div class="mini-bar-wrap"><div class="mini-bar" style="--h:75%"></div><span>V</span></div>
+                  <div class="mini-bar-wrap"><div class="mini-bar hi" style="--h:45%"></div><span>S</span></div>
+                  <div class="mini-bar-wrap"><div class="mini-bar" style="--h:20%"></div><span>D</span></div>
+                </div>
+                <div class="mini-row">
+                  <div class="mini-pill"><i class="fa-solid fa-circle" style="color:#4caf50;font-size:6px"></i> En línea</div>
+                  <div class="mini-pill"><i class="fa-solid fa-bell"></i> 3 alertas</div>
+                </div>
+              </div>
+            </div>
+            <div class="laptop-base">
+              <div class="laptop-hinge"></div>
+              <div class="laptop-foot"></div>
+            </div>
+          </div>
+
+          <!-- TABLET -->
+          <div class="device-tablet">
+            <div class="tablet-screen">
+              <div class="tablet-inner">
+                <div class="ti-row"><i class="fa-solid fa-id-card"></i><span>Membresías</span></div>
+                <div class="ti-item"><div class="ti-bar" style="--w:88%"></div><span>Activas 88%</span></div>
+                <div class="ti-item"><div class="ti-bar warn" style="--w:12%"></div><span>Por vencer 12%</span></div>
+                <div class="ti-divider"></div>
+                <div class="ti-row"><i class="fa-solid fa-dumbbell"></i><span>Clientes</span></div>
+                <div class="ti-num">312 <small>registrados</small></div>
+              </div>
+            </div>
+            <div class="tablet-btn"></div>
+          </div>
+
+          <!-- IPHONE -->
+          <div class="device-phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-inner">
+                <div class="pi-header">Portal Socio</div>
+                <div class="pi-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="pi-name">Carlos M.</div>
+                <div class="pi-badge active">Membresía Activa</div>
+                <div class="pi-info"><i class="fa-solid fa-calendar"></i> Vence: 30 Abr</div>
+                <div class="pi-info"><i class="fa-solid fa-fire"></i> 18 asistencias</div>
+                <div class="pi-btn">Ver historial</div>
+              </div>
+            </div>
+            <div class="phone-home"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MÓDULOS -->
+  <section style="background: var(--gris); padding: 90px 0;">
+    <div class="section" style="padding-top:0; padding-bottom:0;">
+      <div style="text-align:center; margin-bottom:48px;">
+        <span class="section-tag">Módulos</span>
+        <h2>Todo lo que necesita tu gimnasio</h2>
+        <p class="subtitle" style="margin:0 auto;">Cada módulo fue diseñado pensando en las operaciones reales de un gimnasio profesional.</p>
+      </div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="mod-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3>Administración de Personal</h3>
+          <p>Gestiona instructores, recepcionistas y staff. Controla horarios, roles y permisos de acceso al sistema.</p>
+        </div>
+        <div class="module-card">
+          <div class="mod-icon"><i class="fa-solid fa-dumbbell"></i></div>
+          <h3>Gestión de Clientes</h3>
+          <p>Registro completo de socios: historial, datos personales, fotografía, contacto de emergencia y estado de membresía.</p>
+        </div>
+        <div class="module-card">
+          <div class="mod-icon"><i class="fa-solid fa-id-card"></i></div>
+          <h3>Membresías</h3>
+          <p>Crea planes flexibles: mensual, trimestral, anual. Define precios, accesos y beneficios por nivel.</p>
+        </div>
+        <div class="module-card">
+          <div class="mod-icon"><i class="fa-solid fa-rotate"></i></div>
+          <h3>Suscripciones</h3>
+          <p>Control de renovaciones automáticas, alertas de vencimiento y seguimiento de pagos pendientes o atrasados.</p>
+        </div>
+        <div class="module-card">
+          <div class="mod-icon"><i class="fa-solid fa-gears"></i></div>
+          <h3>Maquinaria</h3>
+          <p>Inventario de equipos, registro de mantenimientos, vida útil y estado de cada máquina en tu instalación.</p>
+        </div>
+        <div class="module-card">
+          <div class="mod-icon"><i class="fa-solid fa-jar"></i></div>
+          <h3>Suplementos Deportivos</h3>
+          <p>Catálogo de productos, control de stock, ventas y registro de consumo para tus clientes.</p>
+        </div>
+        <div class="module-card">
+          <div class="mod-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3>Portal de Asistencias</h3>
+          <p>Tus clientes pueden acceder a su propio perfil para consultar sus días asistidos, historial y vigencia.</p>
+        </div>
+        <div class="module-card">
+          <div class="mod-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Reportes y Estadísticas</h3>
+          <p>Dashboards en tiempo real: ingresos, asistencia diaria, productos más vendidos y métricas clave.</p>
+        </div>
+        <div class="module-card">
+          <div class="mod-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Roles y Permisos</h3>
+          <p>Control de acceso por rol: administrador, recepcionista e instructor, cada uno con su panel personalizado.</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="funcionalidades.html" class="btn-primary" style="display:inline-flex;">Ver detalle completo <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section style="padding: 90px 0;">
+    <div class="section" style="padding-top:0; padding-bottom:0;">
+      <div class="benefits-grid">
+        <div class="benefit-list">
+          <span class="section-tag">¿Por qué Go Fit?</span>
+          <h2>Diseñado para el éxito de tu negocio</h2>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fa-solid fa-cloud"></i></div>
+            <div>
+              <h4>100% en la nube</h4>
+              <p>Accede desde cualquier dispositivo, en cualquier momento, sin instalaciones complicadas.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <div>
+              <h4>Portal de clientes</h4>
+              <p>Tus socios ven sus asistencias, membresía activa y estado de cuenta desde su celular.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fa-solid fa-bell"></i></div>
+            <div>
+              <h4>Alertas automáticas</h4>
+              <p>Notificaciones de vencimiento de membresías y mantenimiento de equipos sin esfuerzo manual.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h4>Datos seguros</h4>
+              <p>Información de clientes y finanzas protegida con respaldos automáticos y acceso por roles.</p>
+            </div>
+          </div>
+        </div>
+        <div class="benefit-real-img">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80"
+               alt="Entrenamiento en gimnasio" />
+          <div class="overlay-cta">
+            <p>Sistema completo listo para usar en tu gimnasio</p>
+            <a href="contacto.html" class="btn-primary" style="display:inline-flex;">
+              <i class="fa-solid fa-paper-plane"></i> Empezar ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>¿Listo para transformar tu gimnasio?</h2>
+    <p>Solicita una demostración gratuita y descubre todo lo que Go Fit puede hacer por ti.</p>
+    <a href="contacto.html" class="btn-white"><i class="fa-solid fa-envelope"></i> Contáctanos hoy mismo</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <!-- Columna 1: Logo Principal y texto -->
+      <div class="footer-brand">
+        <img src="assets/GoFitNaranja.png" alt="Go Fit" />
+        <p>Software de gestión integral para gimnasios. Centraliza tus operaciones y enfócate en el crecimiento.</p>
+      </div>
+
+      <!-- Columna 2: Producto -->
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="funcionalidades.html">Funcionalidades</a></li>
+          <li><a href="contacto.html">Solicitar Demo</a></li>
+          <li><a href="contacto.html">Precios</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Módulos -->
+      <div>
+        <h4>Módulos</h4>
+        <ul>
+          <li><a href="funcionalidades.html">Personal</a></li>
+          <li><a href="funcionalidades.html">Clientes</a></li>
+          <li><a href="funcionalidades.html">Membresías</a></li>
+          <li><a href="funcionalidades.html">Maquinaria</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Icono, Contacto y Legal agrupados -->
+      <div>
+        <!-- Aquí está el ícono en blanco -->
+        <div style="margin-bottom: 24px;">
+          <img src="assets/Component 1.png" alt="Icono Go Fit" style="width: 50px; height: auto; filter: brightness(0) invert(1); opacity: 0.85;" />
+        </div>
+
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/522291601133"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+          <li><a href="mailto:supportGoFit@outlook.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+        </ul>
+
+        <h4 style="margin-top: 24px;">Legal</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y Condiciones</a></li>
+          <li><a href="#">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Parte inferior -->
+    <div class="footer-bottom">
+      <span>© 2026 Go Fit — Todos los derechos reservados</span>
+      <span><a href="#">Aviso de Privacidad</a></span>
+    </div>
+  </footer>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

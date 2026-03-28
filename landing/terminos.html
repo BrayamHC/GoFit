@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos y Condiciones</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="assets/Component 1.png?v=2" />
+  <style>
+    .terms-hero {
+      background: linear-gradient(135deg, rgba(26,0,0,0.97) 0%, rgba(45,0,0,0.95) 100%);
+      padding: 130px 40px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .terms-hero canvas {
+      position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0;
+    }
+    .terms-hero-content { position: relative; z-index: 1; }
+    .terms-hero h1 { color: #fff; font-size: 2.4rem; font-weight: 800; margin-bottom: 10px; }
+    .breadcrumb { color: #aaa; font-size: 0.88rem; margin-bottom: 0; }
+    .breadcrumb a { color: var(--rojo-claro); text-decoration: none; }
+
+    .terms-body {
+      max-width: 860px; margin: 0 auto; padding: 70px 40px 80px;
+    }
+    .terms-body h2 {
+      font-size: 1.15rem; font-weight: 700; color: var(--texto-oscuro);
+      margin: 36px 0 10px; padding-left: 14px;
+      border-left: 3px solid var(--rojo);
+    }
+    .terms-body h2 span {
+      color: var(--rojo); margin-right: 6px; font-size: 1rem;
+    }
+    .terms-body p, .terms-body li {
+      color: #555; font-size: 0.95rem; line-height: 1.8;
+    }
+    .terms-body ul {
+      padding-left: 20px; margin: 10px 0 0;
+    }
+    .terms-body ul li { margin-bottom: 6px; }
+    .terms-divider {
+      border: none; border-top: 1px solid #eee; margin: 10px 0;
+    }
+    .terms-badge {
+      display: inline-block; background: #fce4e4; color: var(--rojo);
+      border-radius: 6px; padding: 4px 12px; font-size: 0.8rem;
+      font-weight: 600; margin-bottom: 28px;
+    }
+    .terms-updated {
+      background: var(--gris); border-radius: 10px; padding: 14px 20px;
+      font-size: 0.85rem; color: #666; margin-top: 48px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .terms-updated i { color: var(--rojo); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="assets/Component 3.png" alt="Go Fit" /></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="funcionalidades.html">Funcionalidades</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <!-- Solo visible en móvil -->
+      <li class="nav-mobile-cta-wrap">
+        <a href="contacto.html" class="nav-cta nav-mobile-cta nav-animated-btn">
+          <img src="assets/FAVICON 2.svg" alt="" class="nav-btn-icon" />
+          <span>Solicitar Demo</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Solo visible en desktop -->
+    <a href="contacto.html" class="nav-cta nav-desktop-cta nav-animated-btn">
+      <img src="assets/FAVICON 2.svg" alt="" class="nav-btn-icon" />
+      <span>Solicitar Demo</span>
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="terms-hero">
+    <canvas id="gymCanvas"></canvas> 
+    <div class="terms-hero-content">
+      <p class="breadcrumb"><a href="index.html">Inicio</a> &rsaquo; Términos y Condiciones</p>
+      <h1>Términos y Condiciones de Servicio</h1>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="terms-body">
+
+    <span class="terms-badge"><i class="fa-solid fa-file-contract"></i> &nbsp;Documento legal vigente</span>
+
+    <h2><span>1.</span> Definiciones</h2>
+    <ul>
+      <li><strong>"Cliente":</strong> Dueño de gimnasio, administrador u organización que contrata Go Fit.</li>
+      <li><strong>"Usuarios finales":</strong> Socios o miembros del gimnasio que utilizan la plataforma o los servicios asociados.</li>
+      <li><strong>"Servicio":</strong> Plataforma Go Fit y todas sus funcionalidades (gestión de membresías, control de personal, inventarios, reportes, portal de asistencias, etc.).</li>
+      <li><strong>"Módulo adicional":</strong> Funcionalidad opcional dentro del sistema Go Fit que puede habilitarse de forma independiente según el plan contratado.</li>
+    </ul>
+    <hr class="terms-divider" />
+
+    <h2><span>2.</span> Objeto</h2>
+    <p>Go Fit provee un sistema en la nube diseñado para facilitar la administración integral de gimnasios, incluyendo gestión de clientes, control de membresías y suscripciones, administración de personal, inventario de maquinaria, venta de suplementos, generación de reportes y portal de asistencias para socios.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>3.</span> Registro y Acceso</h2>
+    <ul>
+      <li>El Cliente es responsable de proporcionar información veraz y actualizada al registrarse.</li>
+      <li>El Cliente recibirá credenciales de acceso, las cuales son de uso personal e intransferible.</li>
+      <li>El Cliente es responsable de toda la actividad realizada dentro de su sistema Go Fit.</li>
+    </ul>
+    <hr class="terms-divider" />
+
+    <h2><span>4.</span> Planes y Pagos</h2>
+    <p>Go Fit ofrece planes de suscripción mensual, trimestral, semestral o anual. Los pagos pueden gestionarse de dos formas:</p>
+    <ul>
+      <li><strong>Registro manual en el sistema:</strong> El Cliente lleva control de pagos realizados fuera de la plataforma, como efectivo, transferencia bancaria o cargo en terminal propia.</li>
+      <li><strong>Integración con pasarela de pago:</strong> En caso de habilitarse, el procesamiento se realiza a través de la pasarela y aplican las comisiones correspondientes, las cuales no son reembolsables.</li>
+    </ul>
+    <p>La falta de pago de la suscripción puede derivar en la suspensión del acceso al sistema hasta regularizar el adeudo.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>5.</span> Garantía de Satisfacción — 30 días</h2>
+    <p>Go Fit ofrece una garantía de 30 días desde el primer pago para solicitar la cancelación y reembolso si el Cliente considera que el servicio no se adapta a sus necesidades. No aplica a periodos de prueba ni a comisiones de pasarela de pago.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>6.</span> Cancelaciones y Devoluciones</h2>
+    <p>El Cliente puede cancelar su suscripción en cualquier momento. Los cargos ya generados no son reembolsables, salvo en el marco de la garantía de 30 días. Si el Cliente no solicita la cancelación antes de la fecha de corte, la suscripción se renovará automáticamente.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>7.</span> Uso Aceptable del Servicio</h2>
+    <p>El Cliente se compromete a no usar Go Fit para actividades ilegales, fraudulentas o que violen derechos de terceros. Go Fit puede suspender o cancelar el acceso en caso de detectar uso indebido sin previo aviso.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>8.</span> Disponibilidad y Soporte</h2>
+    <p>Go Fit opera bajo un esquema de software en la nube con disponibilidad 24/7, salvo mantenimientos programados. El soporte se brinda mediante WhatsApp y correo electrónico en horarios hábiles (Lunes a Viernes, 9:00–18:00). Go Fit no garantiza disponibilidad ininterrumpida, pero se compromete a mantener los más altos estándares de servicio.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>9.</span> Responsabilidad</h2>
+    <p>Go Fit no se hace responsable por pérdidas económicas derivadas de mal uso del sistema, errores de registro humano o interrupciones externas (fallos de internet, pasarelas de pago, terceros). La responsabilidad máxima de Go Fit se limita al monto efectivamente pagado por el Cliente en los últimos 3 meses de servicio.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>10.</span> Datos y Privacidad</h2>
+    <p>Go Fit cumple con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (México). Los datos de los socios y del gimnasio son propiedad del Cliente. Go Fit únicamente los almacena y procesa para la prestación del servicio y no los comparte con terceros sin consentimiento, salvo cuando lo exija la ley.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>11.</span> Propiedad Intelectual</h2>
+    <p>Todo el software, logos, documentación y contenidos relacionados con Go Fit son propiedad de sus desarrolladores. El Cliente obtiene únicamente una licencia de uso, no derechos de propiedad sobre el sistema.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>12.</span> Modificaciones a los Términos</h2>
+    <p>Go Fit se reserva el derecho de actualizar estos términos en cualquier momento. Los cambios se notificarán a los Clientes por correo electrónico o dentro del sistema con al menos 7 días de anticipación.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>13.</span> Legislación y Jurisdicción</h2>
+    <p>Estos términos se rigen por las leyes de los Estados Unidos Mexicanos. Cualquier controversia será resuelta en los tribunales competentes de la ciudad de Puebla, Puebla.</p>
+    <hr class="terms-divider" />
+
+    <h2><span>14.</span> Contacto</h2>
+    <p>Para consultas, soporte o aclaraciones, puede comunicarse a:</p>
+    <ul>
+      <li><i class="fa-solid fa-envelope" style="color:var(--rojo);"></i> &nbsp;<a href="mailto:supportGoFit@outlook.com">supportGoFit@outlook.com</a></li>
+      <li><i class="fa-brands fa-whatsapp" style="color:var(--rojo);"></i> &nbsp;<a href="https://wa.me/522291601133">+52 229 160 1133</a></li>
+    </ul>
+
+    <div class="terms-updated">
+      <i class="fa-solid fa-calendar-check"></i>
+      <span>Última actualización: <strong>marzo 2026</strong></span>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner" style="padding: 50px 40px;">
+    <h2 style="font-size:1.6rem;">¿Tienes dudas sobre el servicio?</h2>
+    <p>Contáctanos y con gusto resolvemos cualquier pregunta.</p>
+    <a href="contacto.html" class="btn-white"><i class="fa-solid fa-envelope"></i> Contactar</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/GoFitNaranja.png" alt="Go Fit" />
+        <p>Software de gestión integral para gimnasios. Centraliza tus operaciones y enfócate en el crecimiento.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="funcionalidades.html">Funcionalidades</a></li>
+          <li><a href="contacto.html">Solicitar Demo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y Condiciones</a></li>
+          <li><a href="#">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/522291601133"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+          <li><a href="mailto:supportGoFit@outlook.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Go Fit — Todos los derechos reservados</span>
+      <span><a href="terminos.html">Términos y Condiciones</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

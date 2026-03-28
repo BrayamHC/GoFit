@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funcionalidades</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/Component 1.png" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="assets/Component 3.png" alt="Go Fit" /></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" >Inicio</a></li>
+      <li><a href="funcionalidades.html" class="active">Funcionalidades</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <!-- Solo visible en móvil -->
+      <li class="nav-mobile-cta-wrap">
+        <a href="contacto.html" class="nav-cta nav-mobile-cta nav-animated-btn">
+          <img src="assets/FAVICON 2.svg" alt="" class="nav-btn-icon" />
+          <span>Solicitar Demo</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Solo visible en desktop -->
+    <a href="contacto.html" class="nav-cta nav-desktop-cta nav-animated-btn">
+      <img src="assets/FAVICON 2.svg" alt="" class="nav-btn-icon" />
+      <span>Solicitar Demo</span>
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="position:relative; overflow:hidden;">
+    <canvas id="gymCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+    <div style="position:relative; z-index:1;">
+      <h1>Funcionalidades de Go Fit</h1>
+      <p>Cada módulo cubre una necesidad real de tu gimnasio. Conócelos en detalle.</p>
+    </div>
+  </div>
+
+
+  <!-- BLOQUES -->
+  <div class="func-section">
+
+    <!-- Personal -->
+    <div class="func-block">
+      <div class="func-visual photo">
+        <img class="func-img" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80"
+             alt="Administración de personal en gimnasio" />
+      </div>
+      <div class="func-text">
+        <span class="section-tag">Módulo 1</span>
+        <h3><i class="fa-solid fa-users-gear" style="color:var(--rojo);margin-right:8px;"></i>Administración de Personal</h3>
+        <p>Controla toda tu plantilla laboral desde un solo panel. Registra datos del empleado, asigna roles específicos dentro del sistema y gestiona horarios de trabajo con facilidad.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Registro de empleados</span>
+          <span class="feat-tag">Roles y permisos</span>
+          <span class="feat-tag">Horarios</span>
+          <span class="feat-tag">Historial laboral</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clientes -->
+    <div class="func-block reverse">
+      <div class="func-visual photo">
+        <img class="func-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80"
+             alt="Gestión de clientes en el gimnasio" />
+      </div>
+      <div class="func-text">
+        <span class="section-tag">Módulo 2</span>
+        <h3><i class="fa-solid fa-dumbbell" style="color:var(--rojo);margin-right:8px;"></i>Gestión de Clientes</h3>
+        <p>Ficha completa por cada socio: nombre, fotografía, contacto, historial médico básico y contacto de emergencia. Accede al perfil de cualquier cliente en segundos.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Registro con foto</span>
+          <span class="feat-tag">Historial completo</span>
+          <span class="feat-tag">Búsqueda rápida</span>
+          <span class="feat-tag">Datos de emergencia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Membresías -->
+    <div class="func-block">
+      <div class="func-visual photo">
+        <img class="func-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80"
+             alt="Control de membresías" />
+      </div>
+      <div class="func-text">
+        <span class="section-tag">Módulo 3</span>
+        <h3><i class="fa-solid fa-id-card" style="color:var(--rojo);margin-right:8px;"></i>Membresías</h3>
+        <p>Diseña planes personalizados con diferentes precios, duraciones y beneficios. Asigna membresías a clientes y lleva el control total de fechas de inicio y vencimiento.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Planes personalizados</span>
+          <span class="feat-tag">Control de vigencia</span>
+          <span class="feat-tag">Alertas de vencimiento</span>
+          <span class="feat-tag">Historial de planes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suscripciones -->
+    <div class="func-block reverse">
+      <div class="func-visual photo">
+        <img class="func-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80"
+             alt="Gestión de suscripciones y pagos" />
+      </div>
+      <div class="func-text">
+        <span class="section-tag">Módulo 4</span>
+        <h3><i class="fa-solid fa-rotate" style="color:var(--rojo);margin-right:8px;"></i>Suscripciones</h3>
+        <p>Gestiona renovaciones recurrentes, pagos pendientes y vencimientos próximos. Recibe notificaciones automáticas antes de que caduque la membresía de un cliente.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Renovaciones</span>
+          <span class="feat-tag">Pagos pendientes</span>
+          <span class="feat-tag">Notificaciones auto</span>
+          <span class="feat-tag">Estado de cuenta</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maquinaria -->
+    <div class="func-block">
+      <div class="func-visual photo">
+        <img class="func-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=80"
+             alt="Inventario de maquinaria de gimnasio" />
+      </div>
+      <div class="func-text">
+        <span class="section-tag">Módulo 5</span>
+        <h3><i class="fa-solid fa-gears" style="color:var(--rojo);margin-right:8px;"></i>Maquinaria</h3>
+        <p>Inventario completo de equipos con su marca, modelo, fecha de compra y estado actual. Programa mantenimientos preventivos y registra reparaciones para alargar la vida útil.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Inventario de equipos</span>
+          <span class="feat-tag">Mantenimientos</span>
+          <span class="feat-tag">Estado y alertas</span>
+          <span class="feat-tag">Vida útil</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suplementos -->
+    <div class="func-block reverse">
+      <div class="func-visual photo">
+        <img class="func-img" src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=700&q=80"
+             alt="Suplementos deportivos y nutrición" />
+      </div>
+      <div class="func-text">
+        <span class="section-tag">Módulo 6</span>
+        <h3><i class="fa-solid fa-jar" style="color:var(--rojo);margin-right:8px;"></i>Suplementos Deportivos</h3>
+        <p>Catálogo de productos para venta interna: proteínas, vitaminas, bebidas energéticas y más. Controla el stock, registra ventas y consulta el historial de consumo por cliente.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Catálogo de productos</span>
+          <span class="feat-tag">Control de stock</span>
+          <span class="feat-tag">Registro de ventas</span>
+          <span class="feat-tag">Historial por cliente</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portal de clientes -->
+    <div class="func-block">
+      <div class="func-visual photo">
+        <img class="func-img" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80"
+             alt="Portal de asistencias para clientes" />
+      </div>
+      <div class="func-text">
+        <span class="section-tag">Módulo 7</span>
+        <h3><i class="fa-solid fa-calendar-check" style="color:var(--rojo);margin-right:8px;"></i>Portal de Asistencias</h3>
+        <p>Cada cliente tiene acceso a un portal personal donde puede consultar sus días asistidos, el estado de su membresía vigente y su historial de pagos, sin necesidad de llamar a recepción.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Días asistidos</span>
+          <span class="feat-tag">Estado de membresía</span>
+          <span class="feat-tag">Historial de pagos</span>
+          <span class="feat-tag">Acceso desde celular</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>¿Te convencieron las funcionalidades?</h2>
+    <p>Solicita una demostración gratuita y prueba Go Fit en tu gimnasio.</p>
+    <a href="contacto.html" class="btn-white"><i class="fa-solid fa-envelope"></i> Solicitar Demo Gratis</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <!-- Columna 1: Logo Principal y texto -->
+      <div class="footer-brand">
+        <img src="assets/GoFitNaranja.png" alt="Go Fit" />
+        <p>Software de gestión integral para gimnasios. Centraliza tus operaciones y enfócate en el crecimiento.</p>
+      </div>
+
+      <!-- Columna 2: Producto -->
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="funcionalidades.html">Funcionalidades</a></li>
+          <li><a href="contacto.html">Solicitar Demo</a></li>
+          <li><a href="contacto.html">Precios</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Módulos -->
+      <div>
+        <h4>Módulos</h4>
+        <ul>
+          <li><a href="funcionalidades.html">Personal</a></li>
+          <li><a href="funcionalidades.html">Clientes</a></li>
+          <li><a href="funcionalidades.html">Membresías</a></li>
+          <li><a href="funcionalidades.html">Maquinaria</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Icono, Contacto y Legal agrupados -->
+      <div>
+        <!-- Aquí está el ícono en blanco -->
+        <div style="margin-bottom: 24px;">
+          <img src="assets/Component 1.png" alt="Icono Go Fit" style="width: 50px; height: auto; filter: brightness(0) invert(1); opacity: 0.85;" />
+        </div>
+
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/522291601133"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+          <li><a href="mailto:supportGoFit@outlook.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+        </ul>
+
+        <h4 style="margin-top: 24px;">Legal</h4>
+        <ul>
+          <li><a href="terminos.html">Términos y Condiciones</a></li>
+          <li><a href="#">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Parte inferior -->
+    <div class="footer-bottom">
+      <span>© 2026 Go Fit — Todos los derechos reservados</span>
+      <span><a href="#">Aviso de Privacidad</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

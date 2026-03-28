@@ -130,9 +130,19 @@ h1, h2, h3, h4 {
 /* ── SECTIONS GENERAL ── */
 .section { padding: 90px 40px; max-width: 1200px; margin: 0 auto; }
 .section-tag {
-  display: inline-block; background: #fce4e4; color: var(--rojo);
-  padding: 5px 14px; border-radius: 20px; font-size: 0.8rem;
-  font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px;
+  display: inline-block;
+  align-self: flex-start;   /* ← esta línea */
+  background: rgba(230, 60, 47, 0.08);
+  color: var(--rojo);
+  border: 1px solid rgba(230, 60, 47, 0.25);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-family: 'Montserrat', sans-serif;
 }
 .section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 14px; color: var(--texto-oscuro); }
 .section .subtitle { color: #666; font-size: 1.05rem; max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
@@ -230,12 +240,53 @@ h1, h2, h3, h4 {
   display: flex; align-items: center; justify-content: center; gap: 8px;
 }
 .btn-submit:hover { background: var(--rojo-hover); transform: translateY(-1px); }
+/* ── Notificación del formulario ── */
 .form-success {
-  display: none; background: #e8f5e9; border: 1.5px solid #4caf50;
-  border-radius: 8px; padding: 14px 18px; color: #2e7d32;
-  font-weight: 600; margin-bottom: 16px; font-size: 0.9rem;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+
+    /* Estado base: oculto */
+    background: transparent;
 }
 
+/* Éxito — fondo negro, borde naranja/rojo */
+.form-success.is-success {
+    display: flex;
+    background: rgba(15, 10, 10, 0.95);
+    border-color: var(--rojo);
+    color: #e8e8e8;
+    box-shadow: 0 0 0 1px rgba(230, 60, 47, 0.15),
+                inset 0 0 20px rgba(230, 60, 47, 0.04);
+}
+
+.form-success.is-success i {
+    color: #22c55e;   /* verde */
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* Error — fondo negro, borde rojo más intenso */
+.form-success.is-error {
+    display: flex;
+    background: rgba(15, 10, 10, 0.95);
+    border-color: #dc2626;
+    color: #e8e8e8;
+    box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.2),
+                inset 0 0 20px rgba(220, 38, 38, 0.05);
+}
+
+.form-success.is-error i {
+    color: #ef4444;   /* rojo */
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
 /* ── FOOTER ── */
 .footer {
   background: #111; color: #bbb; padding: 60px 40px 24px;

@@ -9,9 +9,10 @@ import { SuscripcionesRepoAction } from './repositories/suscripciones.repoAction
 
 // MembresiasRepoData es necesario para calcular fecha_fin en crearSuscripcion
 import { MembresiasRepoData } from '../membresias/repositories/membresias.repoData';
+import { BitacoraModule } from '../bitacora/bitacora.module';
 
 @Module({
-    imports: [KnexModule],
+    imports: [KnexModule, BitacoraModule],
     controllers: [SuscripcionesController],
     providers: [
         SuscripcionesService,

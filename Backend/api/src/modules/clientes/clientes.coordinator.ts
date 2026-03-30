@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ClientesService } from './clientes.service';
 import { SuscripcionesService } from '../suscripciones/suscripciones.service';
-import { BitacoraService } from '../../services/bitacora.service'; // ← temporal hasta crear BitacoraModule
+import { BitacoraService } from '../bitacora/bitacora.service';
 import { DatabaseQueryException } from '../../common/exceptions';
 
 @Injectable()
@@ -29,7 +29,7 @@ export class ClientesCoordinator {
                 usuario_creacion: usuarioSesion.usuario_id,
             });
 
-            await this.bitacoraService.registrar({
+            await this.bitacoraService.agregarBitacora({
                 usuario_id: usuarioSesion.usuario_id,
                 usuario_nombre: `${usuarioSesion.nombre} ${usuarioSesion.apellido}`,
                 modulo: 'clientes',

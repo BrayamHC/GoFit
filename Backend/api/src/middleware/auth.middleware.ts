@@ -5,13 +5,13 @@ import {
     Logger,
 } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../modules/auth/auth.service';
 
 @Injectable()
 export class AuthMiddleware implements NestMiddleware {
     private readonly logger = new Logger(AuthMiddleware.name);
 
-    constructor(private readonly authService: AuthService) {}
+    constructor(private readonly authService: AuthService) { }
 
     async use(req: Request, res: Response, next: NextFunction) {
         try {
@@ -39,9 +39,9 @@ export class AuthMiddleware implements NestMiddleware {
             await this.validarExistenciaUsuarioBD(token, sesion);
 
             // 4. Adjuntar datos al request
-            (req as any).user    = sesion.usuario;
-            (req as any).token   = token;
-            (req as any).sesion  = sesion;
+            (req as any).user = sesion.usuario;
+            (req as any).token = token;
+            (req as any).sesion = sesion;
             (req as any).tipoSesion = sesion.tipo_sesion;
 
             // 5. Renovar TTL

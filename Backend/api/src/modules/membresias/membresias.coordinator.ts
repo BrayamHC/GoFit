@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { MembresiasService } from './membresias.service';
-import { BitacoraService } from '../../services/bitacora.service'; // temporal
+import { BitacoraService } from '../bitacora/bitacora.service';
 
 @Injectable()
 export class MembresiasCoordinator {
@@ -17,7 +17,7 @@ export class MembresiasCoordinator {
 
             const membresiaCreada = await this.membresiasService.crearMembresia(datos, usuarioSesion);
 
-            await this.bitacoraService.registrar({
+            await this.bitacoraService.agregarBitacora({
                 usuario_id: usuarioSesion.usuario_id,
                 usuario_nombre: `${usuarioSesion.nombre} ${usuarioSesion.apellido}`,
                 modulo: 'membresias',

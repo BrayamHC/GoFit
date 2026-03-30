@@ -9,13 +9,11 @@ import { ClientesBO } from './repositories/clientes.bo';
 import { ClientesRepoData } from './repositories/clientes.repoData';
 import { ClientesRepoAction } from './repositories/clientes.repoAction';
 
-// Shared — temporal hasta mover a su propio módulo
-import { BitacoraService } from '../../services/bitacora.service';
-import { BitacoraRepoAction } from '../../repo/actions/bitacora.repoAction';
-import { BitacoraBO } from '../../repo/BO/bitacora.bo';
+import { BitacoraModule } from '../bitacora/bitacora.module';
+
 
 @Module({
-    imports: [KnexModule, SuscripcionesModule],
+    imports: [KnexModule, SuscripcionesModule, BitacoraModule],
     controllers: [ClientesController],
     providers: [
         ClientesCoordinator,
@@ -23,10 +21,6 @@ import { BitacoraBO } from '../../repo/BO/bitacora.bo';
         ClientesBO,
         ClientesRepoData,
         ClientesRepoAction,
-        // Shared — se moverán cuando creemos BitacoraModule
-        BitacoraService,
-        BitacoraRepoAction,
-        BitacoraBO,
     ],
     exports: [ClientesService],
 })

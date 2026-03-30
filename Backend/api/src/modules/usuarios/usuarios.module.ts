@@ -6,14 +6,12 @@ import { UsuariosBO } from './repositories/usuarios.bo';
 import { UsuariosRepoData } from './repositories/usuarios.repoData';
 import { UsuariosRepoAction } from './repositories/usuarios.repoAction';
 import { UsuariosRepoHelper } from './repositories/usuarios.repoHelper';
+import { BitacoraModule } from '../bitacora/bitacora.module';
 
-// Shared — temporal hasta crear BitacoraModule
-import { BitacoraService } from '../../services/bitacora.service';
-import { BitacoraRepoAction } from '../../repo/actions/bitacora.repoAction';
-import { BitacoraBO } from '../../repo/BO/bitacora.bo';
+
 
 @Module({
-    imports: [KnexModule],
+    imports: [KnexModule, BitacoraModule],
     controllers: [UsuariosController],
     providers: [
         UsuariosService,
@@ -21,10 +19,6 @@ import { BitacoraBO } from '../../repo/BO/bitacora.bo';
         UsuariosRepoData,
         UsuariosRepoAction,
         UsuariosRepoHelper,
-        // Shared — temporal
-        BitacoraService,
-        BitacoraRepoAction,
-        BitacoraBO,
     ],
     exports: [UsuariosService],
 })

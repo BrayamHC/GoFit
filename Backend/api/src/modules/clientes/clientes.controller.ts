@@ -18,9 +18,9 @@ export class ClientesController {
         return { success: true, data: clientes };
     }
 
-    @Get(':id')
-    async obtenerClientePorId(@Param('id', ParseIntPipe) id: number) {
-        const cliente = await this.clientesService.obtenerClientePorId(id);
+    @Get(':uuid')
+    async obtenerClientePorUUId(@Param('uuid', ParseIntPipe) uuid: string) {
+        const cliente = await this.clientesService.obtenerClientePorUuId(uuid);
         return { success: true, data: cliente };
     }
 

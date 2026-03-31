@@ -13,4 +13,15 @@ export class SuscripcionesRepoAction {
             .returning(['*']);
         return suscripcion;
     }
+
+    async vencerExpiradas(hoy: string): Promise<number> {
+        const actualizadas = await this.knex('suscripciones')
+            .where('status', 'vigente')
+            .where('fecha_fin', '<', hoy)
+            .update({
+                status: 'vencida',
+                fecha_actualizacion: this.knex.fn.now(),
+            });
+        return actualizadas;
+    }
 }

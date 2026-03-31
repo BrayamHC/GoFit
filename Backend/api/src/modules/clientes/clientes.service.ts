@@ -29,10 +29,10 @@ export class ClientesService {
         }
     }
 
-    async obtenerClientePorId(clienteId: number) {
+    async obtenerClientePorUuId(clienteUuId: string) {
         try {
-            const cliente = await this.repoData.obtenerClientePorId(clienteId);
-            if (!cliente) throw new ResourceNotFoundException('Cliente', String(clienteId));
+            const cliente = await this.repoData.obtenerClientePorUuId(clienteUuId);
+            if (!cliente) throw new ResourceNotFoundException('Cliente', String(clienteUuId));
             return cliente;
         } catch (error) {
             if (error instanceof ResourceNotFoundException) throw error;

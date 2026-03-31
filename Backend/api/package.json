@@ -28,13 +28,16 @@
     "migrate:tenant": "knex migrate:latest --knexfile knexfile.ts --env tenant",
     "migrate:rollback:tenant": "knex migrate:rollback --knexfile knexfile.ts --env tenant",
     "seed:make:tenant": "knex seed:make --knexfile knexfile.ts --env tenant",
-    "seed:run:tenant": "knex seed:run --knexfile knexfile.ts --env tenant"
+    "seed:run:tenant": "knex seed:run --knexfile knexfile.ts --env tenant",
+    "cron:asistencias": "ts-node -r tsconfig-paths/register src/scripts/cron-asistencias.ts",
+    "cron:suscripciones": "ts-node -r tsconfig-paths/register src/scripts/cron-suscripciones.ts"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/schedule": "^6.1.1",
     "@nestjs/throttler": "^6.5.0",
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",

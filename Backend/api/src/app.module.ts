@@ -17,6 +17,9 @@ import { SuscripcionesModule } from './modules/suscripciones/suscripciones.modul
 import { UsuariosModule } from './modules/usuarios/usuarios.module';
 import { BitacoraModule } from './modules/bitacora/bitacora.module';
 import { AsistenciasModule } from './modules/asistencias/asistencias.module';
+import { ScheduleModule } from '@nestjs/schedule';
+import { CronsModule } from './crons/crons.module';
+
 
 
 @Module({
@@ -28,13 +31,15 @@ import { AsistenciasModule } from './modules/asistencias/asistencias.module';
     KnexModule,
     AuthModule,
     ThrottlerModule.forRoot(throttlerConfig),
+    ScheduleModule.forRoot(),
+    CronsModule,
     // módulos gofit
     ClientesModule,
     MembresiasModule,
     SuscripcionesModule,
     UsuariosModule,
     BitacoraModule,
-    AsistenciasModule
+    AsistenciasModule,
   ],
   controllers: [AppController],
   providers: [

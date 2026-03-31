@@ -31,7 +31,7 @@ export class ClientesRepoData {
         }
     }
 
-    async obtenerClientePorId(clienteId: number) {
+    async obtenerClientePorUuId(clienteUuid: string) {
         try {
             return await this.knex('clientes as c').select(
                 'c.cliente_id',
@@ -45,7 +45,7 @@ export class ClientesRepoData {
                 'c.fecha_creacion',
                 'c.fecha_actualizacion',
             )
-                .where('c.cliente_id', clienteId)
+                .where('c.cliente_uuid', clienteUuid)
                 .first();
         } catch (error) {
             console.error('Error obteniendo cliente por id:', error);

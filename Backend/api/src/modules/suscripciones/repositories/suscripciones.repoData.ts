@@ -10,20 +10,29 @@ export class SuscripcionesRepoData {
 
     async obtenerSuscripciones(filtros?: any) {
         try {
-            const query = this.knex('suscripciones as s').select(
-                's.suscripcion_id',
-                's.suscripcion_uuid',
-                's.cliente_id',
-                's.membresia_id',
-                's.fecha_inicio',
-                's.fecha_fin',
-                's.dias_gracia',
-                's.fecha_suspension',
-                's.motivo_suspension',
-                's.status',
-                's.fecha_creacion',
-                's.fecha_actualizacion',
-            );
+            const query = this.knex('suscripciones as s')
+                .select(
+                    's.suscripcion_id',
+                    's.suscripcion_uuid',
+                    's.cliente_id',
+                    's.membresia_id',
+                    's.fecha_inicio',
+                    's.fecha_fin',
+                    's.dias_gracia',
+                    's.fecha_suspension',
+                    's.motivo_suspension',
+                    's.status',
+                    's.fecha_creacion',
+                    's.fecha_actualizacion',
+                    // Snapshot de cliente
+                    this.knex.raw(`CONCAT(c.nombre, ' ', c.apellido) AS nombre_completo`),
+                    // Snapshot de membresía
+                    'm.nombre AS membresia_nombre',
+                    'm.descripcion AS membresia_descripcion',
+                )
+                .leftJoin('clientes as c', 'c.cliente_id', 's.cliente_id')
+                .leftJoin('membresias as m', 'm.membresia_id', 's.membresia_id');
+
             SuscripcionesRepoHelper.aplicarFiltros(query, filtros);
             SuscripcionesRepoHelper.aplicarOrden(query, filtros);
             return await query;

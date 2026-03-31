@@ -20,3 +20,21 @@ export function agregarDias(fecha: Date, dias: number): Date {
     nuevaFecha.setDate(nuevaFecha.getDate() + dias);
     return nuevaFecha;
 }
+
+/**
+ * Calcular días restantes desde hoy hasta una fecha fin (YYYY-MM-DD)
+ * Retorna 0 si la fecha ya pasó
+ */
+export function calcularDiasRestantes(fechaFin: string | Date): number {
+    const fechaStr = fechaFin instanceof Date ? fechaFin.toISOString() : fechaFin;
+    const fechaSolo = fechaStr.split('T')[0];
+    const hoy = parseFechaLocal(new Date().toISOString().split('T')[0]);
+    const fin = parseFechaLocal(fechaSolo);
+    return Math.max(0, Math.round((fin.getTime() - hoy.getTime()) / 86_400_000));
+}
+/**
+ * Calcular duración en minutos entre fecha_entrada y fecha_salida
+ */
+export function calcularDuracionMinutos(fechaEntrada: Date | string, fechaSalida: Date | string): number {
+    return Math.round((new Date(fechaSalida).getTime() - new Date(fechaEntrada).getTime()) / 60_000);
+}

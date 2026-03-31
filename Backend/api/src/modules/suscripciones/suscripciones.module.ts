@@ -21,6 +21,6 @@ import { BitacoraModule } from '../bitacora/bitacora.module';
         SuscripcionesRepoAction,
         MembresiasRepoData,   // ← proveído aquí hasta que MembresiasModule exporte su repoData
     ],
-    exports: [SuscripcionesService],  // ← ClientesModule lo importa
+    exports: [SuscripcionesService, SuscripcionesRepoAction]
 })
 export class SuscripcionesModule { }

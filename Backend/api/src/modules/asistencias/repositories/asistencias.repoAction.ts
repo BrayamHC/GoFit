@@ -17,4 +17,13 @@ export class AsistenciasRepoAction {
             .returning('*');
         return asistenciaCerrada;
     }
+
+    async marcarNoCerradas(fecha: string): Promise<number> {
+        const actualizadas = await this.knex('asistencias')
+            .where('status', 'activa')
+            .where('fecha_entrada', '>=', `${fecha} 00:00:00`)
+            .where('fecha_entrada', '<=', `${fecha} 23:59:59`)
+            .update({ status: 'no_cerrada' });
+        return actualizadas; // retorna cantidad de filas afectadas
+    }
 }

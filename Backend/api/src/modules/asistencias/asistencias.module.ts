@@ -21,5 +21,6 @@ import { BitacoraModule } from '../bitacora/bitacora.module';
         AsistenciasRepoHelper,
         AsistenciasBO,
     ],
+    exports: [AsistenciasService, AsistenciasRepoAction]
 })
 export class AsistenciasModule { }

@@ -87,3 +87,43 @@ export class ValidationException extends BusinessException {
         };
     }
 }
+
+// Cliente inactivo
+export class InactiveClienteException extends BusinessException {
+    constructor(nombre: string) {
+        super(`El cliente ${nombre} no está activo`, HttpStatus.FORBIDDEN, 'CLIENTE_INACTIVO');
+    }
+}
+
+// Sin suscripción vigente
+export class SinSuscripcionVigenteException extends BusinessException {
+    constructor(nombre: string) {
+        super(
+            `El cliente ${nombre} no cuenta con una suscripción vigente`,
+            HttpStatus.FORBIDDEN,
+            'SIN_SUSCRIPCION_VIGENTE',
+        );
+    }
+}
+
+// Asistencia en curso
+export class AsistenciaEnCursoException extends BusinessException {
+    constructor(nombre: string) {
+        super(
+            `${nombre} ya tiene una asistencia en curso hoy, ciérrala antes de registrar una nueva`,
+            HttpStatus.CONFLICT,
+            'ASISTENCIA_EN_CURSO',
+        );
+    }
+}
+
+// Sin asistencia activa hoy
+export class SinAsistenciaActivaException extends BusinessException {
+    constructor(nombre: string) {
+        super(
+            `${nombre} no tiene una asistencia activa el día de hoy`,
+            HttpStatus.NOT_FOUND,
+            'SIN_ASISTENCIA_ACTIVA',
+        );
+    }
+}

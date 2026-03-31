@@ -16,6 +16,8 @@ import { MembresiasModule } from './modules/membresias/membresias.module';
 import { SuscripcionesModule } from './modules/suscripciones/suscripciones.module';
 import { UsuariosModule } from './modules/usuarios/usuarios.module';
 import { BitacoraModule } from './modules/bitacora/bitacora.module';
+import { AsistenciasModule } from './modules/asistencias/asistencias.module';
+
 
 @Module({
   imports: [
@@ -31,7 +33,8 @@ import { BitacoraModule } from './modules/bitacora/bitacora.module';
     MembresiasModule,
     SuscripcionesModule,
     UsuariosModule,
-    BitacoraModule
+    BitacoraModule,
+    AsistenciasModule
   ],
   controllers: [AppController],
   providers: [

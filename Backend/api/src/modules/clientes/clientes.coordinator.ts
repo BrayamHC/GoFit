@@ -3,6 +3,8 @@ import { ClientesService } from './clientes.service';
 import { SuscripcionesService } from '../suscripciones/suscripciones.service';
 import { BitacoraService } from '../bitacora/bitacora.service';
 import { DatabaseQueryException } from '../../common/exceptions';
+import { RegistrosFacialesService } from '../registros-faciales/registros-faciales.service';
+
 
 @Injectable()
 export class ClientesCoordinator {
@@ -11,6 +13,7 @@ export class ClientesCoordinator {
     constructor(
         private readonly clientesService: ClientesService,
         private readonly suscripcionesService: SuscripcionesService,
+        private readonly registrosFacialesService: RegistrosFacialesService,
         private readonly bitacoraService: BitacoraService,
     ) { }
 
@@ -28,6 +31,13 @@ export class ClientesCoordinator {
                 membresia_id: datos.membresia_id,
                 usuario_creacion: usuarioSesion.usuario_id,
             });
+
+            await this.registrosFacialesService.crearRegistro({
+                cliente_id: clienteCreado.cliente_id,
+                cliente_uuid: clienteCreado.cliente_uuid,
+                encoding: datos.encoding,
+            });
+
 
             await this.bitacoraService.agregarBitacora({
                 usuario_id: usuarioSesion.usuario_id,

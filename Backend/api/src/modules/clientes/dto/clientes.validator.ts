@@ -1,5 +1,6 @@
 import { z } from 'zod';
 
+
 // ─── Schema base — todos los campos del cliente ───────────────
 const ClienteSchema = z.object({
     nombre: z.string().min(1, 'El nombre es requerido').max(120),
@@ -12,6 +13,7 @@ const ClienteSchema = z.object({
     status: z.enum(['activo', 'inactivo', 'eliminado']),
 });
 
+
 // ─── Schemas derivados ────────────────────────────────────────
 
 // POST /clientes
@@ -19,6 +21,9 @@ export const CrearClienteSchema = ClienteSchema.omit({
     status: true,
 }).extend({
     membresia_id: z.number().int().positive('La membresía es requerida'),
+    encoding: z
+        .array(z.number().finite())
+        .length(128, 'El encoding debe tener exactamente 128 valores'),
 });
 
 // PATCH /clientes/:id
@@ -41,6 +46,7 @@ export const FiltrosClientesSchema = z.object({
     sort: z.enum(['nombre', 'apellido', 'email', 'fecha_creacion']).optional(),
     dir: z.enum(['asc', 'desc']).optional(),
 });
+
 
 // ─── Tipos exportados ─────────────────────────────────────────
 export type Cliente = z.infer<typeof ClienteSchema>;

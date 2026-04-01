@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { KnexModule } from '../../database/knex.module';
 import { SuscripcionesModule } from '../suscripciones/suscripciones.module';
+import { RegistrosFacialesModule } from '../registros-faciales/registros-faciales.module';
 
 import { ClientesController } from './clientes.controller';
 import { ClientesCoordinator } from './clientes.coordinator';
@@ -13,7 +14,7 @@ import { BitacoraModule } from '../bitacora/bitacora.module';
 
 
 @Module({
-    imports: [KnexModule, SuscripcionesModule, BitacoraModule],
+    imports: [KnexModule, SuscripcionesModule, BitacoraModule, RegistrosFacialesModule],
     controllers: [ClientesController],
     providers: [
         ClientesCoordinator,

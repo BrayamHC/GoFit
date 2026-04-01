@@ -1,10 +1,8 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="_blank">
-    <img src="https://nestjs.com/img/logo-small.svg" width="80" alt="NestJS Logo" />
-  </a>
+  <img src="../../landing/assets/Component 3.png" width="240" alt="GoFit Logo" />
 </p>
 
-<h1 align="center">🏋️‍♂️ GoFit — API Backend</h1>
+<h1 align="center">API Backend</h1>
 
 <p align="center">
   <strong>Sistema integral de gestión</strong><br/>
@@ -183,8 +181,12 @@ src/
 └── main.ts        # Punto de entrada (bootstrap)
 ```
 
----
 
 ## 👨‍💻 Autor
 
-**Brayam Herrera Cruz** — Ingeniero en Tecnologías de la Información
+<p align="left" style="display: flex; align-items: center; gap: 8px;">
+  <img src="../../landing/assets/Component 1.png" width="32" alt="GoFit G" />
+  <span>
+    <strong>Brayam Herrera Cruz</strong> — Ingeniero en Tecnologías de la Información
+  </span>
+</p>

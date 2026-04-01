@@ -1,0 +1,48 @@
+# ════════════════════════════════════════════════════════════════════════════════
+#  GoFit Vision — Docker Compose
+#
+#  App completamente independiente del Backend.
+#  NestJS la consume vía FASTAPI_URL en su propio .env.
+#
+#  Comandos frecuentes:
+#    Arrancar:         docker compose up -d
+#    Ver logs:         docker compose logs -f vision
+#    Rebuild imagen:   docker compose build vision
+#    Detener:          docker compose down
+# ════════════════════════════════════════════════════════════════════════════════
+name: gofit-vision
+
+
+services:
+
+  vision:
+    build:
+      # Contexto = raíz de Vision/ (accede a app/ y requirements.txt)
+      context: ..
+      # Dockerfile relativo al context
+      dockerfile: Docker/Dockerfile
+    image: gofit-vision:dev
+    container_name: visionGoFit
+    # Variables de entorno desde Vision/.env
+    env_file:
+      - ../.env
+    ports:
+      # Puerto configurable desde .env, default 8000
+      - "${APP_PORT:-8000}:8000"
+    volumes:
+      # Hot-reload: cambios en Vision/app/ se reflejan sin rebuild
+      - ../app:/app/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - "CMD"
+        - "python"
+        - "-c"
+        - "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      # Da tiempo a uvicorn de arrancar antes del primer check
+      start_period: 30s

@@ -19,6 +19,7 @@ import { BitacoraModule } from './modules/bitacora/bitacora.module';
 import { AsistenciasModule } from './modules/asistencias/asistencias.module';
 import { ScheduleModule } from '@nestjs/schedule';
 import { CronsModule } from './crons/crons.module';
+import { RegistrosFacialesModule } from './modules/registros-faciales/registros-faciales.module';
 
 
 
@@ -40,6 +41,7 @@ import { CronsModule } from './crons/crons.module';
     UsuariosModule,
     BitacoraModule,
     AsistenciasModule,
+    RegistrosFacialesModule
   ],
   controllers: [AppController],
   providers: [
@@ -62,6 +64,8 @@ export class AppModule implements NestModule {
         'Auth/Login',
         'Auth/LoginGlobal',
         'home-api',
+        // Excluido del token — protegido por VisionGuard (x-vision-key)
+        'registros-faciales/encodings',
       )
       .forRoutes('*');
   }

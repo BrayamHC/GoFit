@@ -1,0 +1,28 @@
+# Excluidos del contexto de build Docker
+# (aplica desde Vision/, que es el context definido en docker-compose)
+
+# Carpeta Docker misma (no se necesita dentro de la imagen)
+Docker/
+
+# Entorno virtual local
+.venv/
+
+# Cache de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Variables de entorno (se inyectan via env_file en compose)
+.env
+.env.*
+
+# Control de versiones
+.git/
+.gitignore
+
+# Docs y herramientas de desarrollo
+*.md
+.pytest_cache/
+dist/
+*.egg-info/

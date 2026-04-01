@@ -1,10 +1,7 @@
 <p align="center">
-  <a href="https://vuejs.org/" target="_blank">
-    <img src="https://vuejs.org/images/logo.png" width="80" alt="Vue Logo" />
-  </a>
+  <img src="../landing/assets/Component 3.png" width="240" alt="GoFit Logo" />
 </p>
-
-<h1 align="center">🏋️‍♂️ GoFit — Frontend</h1>
+<h1 align="center">Frontend</h1>
 
 <p align="center">
   <strong>Sistema integral de gestión</strong><br/>
@@ -125,8 +122,11 @@ src/
 └── main.ts        # Punto de entrada
 ```
 
----
-
 ## 👨‍💻 Autor
 
-**Brayam Herrera Cruz** — Ingeniero en Tecnologías de la Información
+<p align="left" style="display: flex; align-items: center; gap: 8px;">
+  <img src="../landing/assets/Component 1.png" width="32" alt="GoFit G" />
+  <span>
+    <strong>Brayam Herrera Cruz</strong> — Ingeniero en Tecnologías de la Información
+  </span>
+</p>

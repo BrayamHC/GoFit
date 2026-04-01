@@ -1,0 +1,21 @@
+{
+    // ── Python Indent (Kevin Rose) ───────────────────────────────
+    "pythonIndent.useTabOnHangingIndent": true,
+    "pythonIndent.trimLinesWithOnlyWhitespace": true,
+    "pythonIndent.keepHangingBracketOnLine": false,
+
+    // ── Editor ───────────────────────────────────────────────────
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+
+    // ── Archivos a ignorar en el explorador ──────────────────────
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/.pytest_cache": true
+    }
+}
